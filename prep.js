@@ -82,6 +82,8 @@ const getFactorial = (num) => {
 const value6 = getFactorial(5);
 console.log(value6);
 
+// =======================
+
 // ! Q7: Write a JavaScript function to check if a given number is prime.
 // * create a fn that takes an number as an input; loop from 2 to the square root of the number; if a number evenly divides it, it is not prime
 
@@ -97,3 +99,32 @@ const isPrime = (num) => {
 
 const value7 = isPrime(5);
 console.log(value7);
+
+// =======================
+// ? Needed help with this one
+// ! Q8: Write a JavaScript program to find the largest element in a nested array.
+// * create a fn that takes in an array and finds the max number of all nested
+
+function findLargestElement(nestedArray) {
+  let largest = Number.MIN_VALUE; // Initialize to a very small number
+  for (let item of nestedArray) {
+    // Check if the item is an array
+    if (Array.isArray(item)) {
+      for (let num of item) {
+        if (num > largest) {
+          largest = num;
+        }
+      }
+    } else {
+      // Handle flat array
+      if (item > largest) {
+        largest = item;
+      }
+    }
+  }
+
+  return largest;
+}
+
+const value8 = findLargestElement([1, 2, [3, 4, 5]]);
+console.log(value8);
