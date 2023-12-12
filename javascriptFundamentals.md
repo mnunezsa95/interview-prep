@@ -4,6 +4,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 ## 1. What is JavaScript?
 
 - JavaScript is a high-level, intrepreted programming language, that makes it possible to create interactive web pages and online applications
+- JS can be understood by browser and inserted in `HTML`
 
 ## 2. What are the different data types in JavaScript?
 
@@ -53,6 +54,8 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
   - will not hoist the variable
 
 ## 9. What are closures in JavaScript?
+
+-
 
 ## 10. What is event delegation in JavaScript?
 
@@ -136,3 +139,170 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 - A callback function is a function pass as an argument to another function to be invoked later on
 
 ![callback function](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/23_javascript-interview.jpg)
+
+## 25. What are promises in JS?
+
+- Promises are objects used for asynchronous operations
+- Promises return the completion or failure of an asynchronous operation and allows chaining and handling of success or errors
+
+![promises](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/24_javascript-interview.jpg)
+
+## 26. What is the difference between synchronous and asynchronous programming?
+
+- Synchronous programming occurs in order; each statement blocks the execution until it is completed
+- Asynchronous programming allows for multiple taks to be executed at the same time; the program doesnt have to finish a task before moving onto the next one
+
+![asynchronous code](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/26_javascript-interview.jpg)
+
+## 27. How to handle errors in JS?
+
+- Errors are handled in JS using the `try`-`catch` blocks.
+  - `Try` block contains code that "may" cause an error
+  - `Catch` block contains indication on how to handle the error
+
+![try-catch](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/27_javascript-interview.jpg)
+
+## 28. Explain the concept of event bubbling in JavaScript.
+
+## 29. What are arrow functions in JavaScript?
+
+- Arrow functions are a shorthand syntax for writing function
+- More compact syntax than traditional function expressions
+- Inherit the `this` keyword from their surrounding scope
+
+## 30. What is the difference between querySelector and getElementById?
+
+- `getElementById()` --> will select an HTML element with a specific id
+- `querySelector()` --> is used to select an HTML element using a CSS-selector
+
+## 31. What is the purpose of the setTimeout() function in JavaScript?
+
+## 32. What is event delegation and why is it useful?
+
+## 33. How can you prevent the default behavior of an event in JavaScript?
+
+- The default behavior of an event in JS can be avoided/prevented using `preventDefault()` method on the event object within an event handler
+
+## 34. What is the difference between localStorage and sessionStorage in JavaScript?
+
+- Session storage --> is deleted / expires when a page session ends
+  - Can only be used within the same tab/window
+- Local storage --> does not get deleted / expires when a page session ends
+  - Is stored on the user's browser for later use
+  - Can be used on different tabs/windows
+
+![local and session storage](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/36_javascript-interview.jpg)
+
+## 35. How can you convert a string to lowercase in JavaScript?
+
+- A string can be converted to lowercase using the `toLowerCase()` function
+
+## 36. What is the purpose of the map() function in JavaScript?
+
+- The map function iterates over an array and performs a callback on each item within the array
+- Returns a new array with the results
+
+![map() function](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/38_javascript-interview.jpg)
+
+## 37. What is the different between splice() and slice()
+
+- `slice()` --> creates a new array that contains a portion of an existing array, specified by the starting and ending indices.
+
+![slice() method](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/40_javascript-interview.jpg)
+
+- `splice()` --> used to modify an array by adding, removing, or replacing elements at a specific position
+
+![splice() method](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/39_javascript-interview.jpg)
+
+## 38. What is the purpose of the reduce() function in JavaScript?
+
+- `reduce()` --> used to reduce an array down to a single value by applicating a function to each element and accumulating the result
+
+![reduce() method](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/41_javascript-interview.jpg)
+
+## 39. How can you check if an array includes a certain value in JavaScript?
+
+- The array prototype has a built-in `includes()` method that checks whether the array contains the specific value
+- Returns a boolean
+
+![includes() method](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/42_javascript-interview.jpg)
+
+# 40. What is the difference between prototype and instance properties in JavaScript?
+
+## 41. What is the difference between an array and an object in JavaScript?
+
+## 42. How can you remove duplicates from an array in JavaScript?
+
+## 43. What is the purpose of the fetch() function in JavaScript?
+
+## 44. What is a generator function in JavaScript?
+
+## 45. What are the different events in JavaScript?
+
+- There are many events in JS.
+- Some common events:
+  - click, mouseover, keydown, keyup, mouseout, mousein, dbclick
+
+## 46. What are the different ways to access an HTML element in JavaScript?
+
+- HTML Elements can be accessed using:
+  1. `getElementById()` --> gets elements by their specified id
+  2. `getElementByTagName()` --> gets an element by the tag name
+  3. `querySelector()` --> gets elements by CSS-selectors
+  4. `querySelectorAll()` --> gets all elements of a specified CSS-selector
+
+## 47. What is the scope of a variable in JavaScript?
+
+## 48. What are the different ways to create objects in JavaScript?
+
+## 49. What is the purpose of the window object in JavaScript?
+
+- `window` object represents the browser window.
+  - Can be used to access browser's features (location bar, status bar, bookmark bar, etc)
+
+## 50. What is the purpose of the async and await keywords in JavaScript?
+
+## 51. What are the naming conventions of a variable
+
+- can only begin with letter or underscore
+- variable names are case-sensitive
+- cannot use reserved keywords
+
+## 52. What are the two way of embedding JavaScript code
+
+- Write JS code in a separate file (JS) and import it using the `<script>` tag
+- Write JS code witin `<script>` tag inside the HTML file
+
+## 54. What do you understand about cookies?
+
+- A cookie is generally a small data file sent from a website and stored on the user's machine
+- Cookies are used to remmeber information for later use
+
+## 55. How to create a cookie?
+
+- Use the `document.cookie = key1 : value1; key2 : value2; key3 : value3`
+
+## 56. How to read a cookie?
+
+- Use the `document.cookie` string that contains the cookies in the form of a key-value pairs
+
+## 57. How would you delete a cookie?
+
+- A cookie can be deleted by setting an expiration date and time;
+
+## 58. What are imports and exports in JavaScript?
+
+- Imports and exports help with writing modular JS
+- Allows for JS code to be split into multiple files
+
+## 59. What is the different between the document and window in JavaScript
+
+- `document` --> found under window object
+- `window` --> a global object that holds the structure
+
+## 60. What are some of the JS frameworks and their use?
+
+- Frameworks aim to fulfill different aspects of the web application process
+  - `React.js` --> frontend development of a web app
+  - `Angular.js` --> frontend development of a web app
+  - `Node.js` --> backend / server-side development of a web app
