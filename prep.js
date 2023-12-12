@@ -182,3 +182,33 @@ const value11 = sortByKey([
   },
 ]);
 console.log(value11);
+
+// =======================
+// ! Q13: Implement a deep clone function in JavaScript that creates a copy of a nested object or array without any reference to the original.
+// *
+
+function deepClone(obj) {
+  if (typeof obj === "object" && !Array.isArray(obj)) {
+    obj2 = { ...obj };
+    return obj2;
+  }
+  if (typeof obj === "object" && Array.isArray(obj)) {
+    obj2 = [...obj];
+    return obj2;
+  }
+}
+
+// test data
+const arrayForTest = [1, 2, [4, 5, 6]];
+const objectForTest = { 0: 0, 1: 1, 2: 2, 3: { 3: 3, 4: 4 } };
+
+// cloning
+const value13ArrayClone = deepClone(arrayForTest);
+const value13ObjectClone = deepClone(objectForTest);
+
+console.log(value13ArrayClone);
+console.log(value13ObjectClone);
+
+// comparing the copy to original
+console.log(arrayForTest === value13ArrayClone);
+console.log(objectForTest === value13ObjectClone);
