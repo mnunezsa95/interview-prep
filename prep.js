@@ -1,8 +1,3 @@
-/* ---------------------------------------------------------------------------------------------- */
-/*                                             source                                             */
-// https://www.keka.com/javascript-coding-interview-questions-and-answers#:~:text=Basic%20JavaScript%20questions%20cover%20concepts,DOM%20manipulation%2C%20and%20asynchronous%20programming.
-/* ---------------------------------------------------------------------------------------------- */
-
 // ! Q1: Write a JavaScript function to calculate the sum of two numbers.
 // * create a function that takes in two numbers as inputs and returns the sum
 
@@ -13,7 +8,7 @@ const addTwoNumbers = (a, b) => {
 const value1 = addTwoNumbers(10, 15);
 console.log(value1);
 
-// =======================
+// ============================================================================================================
 
 // ! Q2: Write a JavaScript program to find the maximum number in an array.
 // * create a fn that takes an array as an input; Math.max() function will find largest number
@@ -25,7 +20,7 @@ const findMaxNumber = (arr) => {
 const value2 = findMaxNumber([1, 2, 3, 4, 5]);
 console.log(value2);
 
-// =======================
+// ============================================================================================================
 
 // ! Q3: Write a JavaScript function to check if a given string is a palindrome (reads the same forwards and backwards).
 // * create a function that takes a str as an input. This function checks if the input matches a reversed input.
@@ -41,7 +36,7 @@ function isPalindrome(str) {
 const value3 = isPalindrome("stanley yelnats");
 console.log(value3);
 
-// =======================
+// ============================================================================================================
 
 // ! Q4: Write a JavaScript program to reverse a given string
 // * same process as above
@@ -53,7 +48,7 @@ function reverseString(str) {
 const value4 = reverseString("hello");
 console.log(value4);
 
-// =======================
+// ============================================================================================================
 
 // ! Q5: Write a JavaScript function that takes an array of numbers and returns a new array with only the even numbers
 // * create a fn that takes an array as an input, checks if evenly divisible by 2 and returns only ones that are
@@ -71,7 +66,7 @@ const isEven = (arr) => {
 const value5 = isEven([1, 2, 3, 4, 5]);
 console.log(value5);
 
-// =======================
+// ============================================================================================================
 
 // ! Q6: Write a JavaScript program to calculate the factorial of a given number
 // * create a function that takes in a number, and multiples it by every number that comes before it
@@ -87,7 +82,7 @@ const getFactorial = (num) => {
 const value6 = getFactorial(5);
 console.log(value6);
 
-// =======================
+// ============================================================================================================
 
 // ! Q7: Write a JavaScript function to check if a given number is prime.
 // * create a fn that takes an number as an input; loop from 2 to the square root of the number; if a number evenly divides it, it is not prime
@@ -105,7 +100,7 @@ const isPrime = (num) => {
 const value7 = isPrime(5);
 console.log(value7);
 
-// =======================
+// ============================================================================================================
 // ? Needed help with this one
 // ! Q8: Write a JavaScript program to find the largest element in a nested array.
 // * create a fn that takes in an array and finds the max number of all nested
@@ -134,7 +129,7 @@ function findLargestElement(nestedArray) {
 const value8 = findLargestElement([1, 2, [3, 4, 5]]);
 console.log(value8);
 
-// =======================
+// ============================================================================================================
 // ! Q10: Write a JavaScript program to convert a string to title case (capitalize the first letter of each word).
 // *
 
@@ -153,7 +148,7 @@ function toTitleCase(str) {
 const value10 = toTitleCase("hello, there marlon");
 console.log(value10);
 
-// =======================
+// ============================================================================================================
 // ! Q12: Write a function that takes an array of objects and a key, and returns a new array sorted based on the values of that key in ascending order.
 // *
 
@@ -183,7 +178,7 @@ const value11 = sortByKey([
 ]);
 console.log(value11);
 
-// =======================
+// ============================================================================================================
 // ! Q13: Implement a deep clone function in JavaScript that creates a copy of a nested object or array without any reference to the original.
 // *
 
@@ -212,3 +207,16 @@ console.log(value13ObjectClone);
 // comparing the copy to original
 console.log(arrayForTest === value13ArrayClone);
 console.log(objectForTest === value13ObjectClone);
+
+// ============================================================================================================
+// ! Q14: Write a function that determines if two strings are anagrams of each other.
+// * Create a fn, takes two strings, compares the chars at each position
+
+function isAnagram(str1, str2) {
+  return str1.split("").sort().join("") === str2.split("").sort().join("");
+}
+
+const value14Test1 = isAnagram("listen", "silent");
+const value14Test2 = isAnagram("marlon", "listen");
+console.log(value14Test1);
+console.log(value14Test2);
