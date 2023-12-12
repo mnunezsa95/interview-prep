@@ -17,7 +17,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 - The process of moving declarations to the top of their scope.
 - This means that variables and functions can be used before they are declared
   - This happens when 'var' is used for varibale
-  - Function declarations are hoisted (fn expressions / arrow functions are not)
+  - Function declarations are hoisted (fn expressions are not)
 - This is why the language implemented 'let' and 'const'
 
 ## 4. What is the difference between null and undefined?
@@ -59,16 +59,61 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 - Event Delegation -> a technique where an event listener is attached to a parent element.
   - This event listener handles events in the child elements
     - Helps optimize performance and reduce memory consumption
-      ![event delegation](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/8_javascript-interview.jpg)
+
+![event delegation](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/8_javascript-interview.jpg)
 
 ## 11. What is the difference between “let”, “const”, and “var”?
 
 - 'let' and 'const' (intro in ES6) have block scope
-- 'const' cannot be reassigned; 'let' can
 - 'var' is function scoped
+- 'const' cannot be reassigned; 'let' can
 - 'var' can be reassigned throughout the function
 
 ## 12. What is implicit type coercion in JavaScript?
 
-- 'Implicit Type Coercion' is the process of converting a value from one type to another
-- Example: adding a STRING & a NUMBER; JS will coerce the string to a number before the operation
+- 'Implicit Type Coercion' is the process of converting a value from one data type to another
+  - Example: adding a STRING & a NUMBER; JS will coerce the string to a number before the operation
+
+## 13. Explain the concept of prototypes in JavaScript
+
+## 14. What is the output of the following code?
+
+- Output: "57" (string type)
+
+![Excercuse](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/12_javascript-interview.jpg)
+
+## 15. How can you clone an object in JavaScript?
+
+- An object in JavaScript can be cloned in two ways:
+  1. The spread operator (...) and assigning it a new value
+  2. Using the Object.assign() method
+
+![Cloning Object](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/13_javascript-interview.jpg)
+
+## 16. What are higher-order functions in JavaScript?
+
+## 17. What is the purpose of the bind() method in JavaScript
+
+- The bind() method is used to create a new function with a specific 'this' valiue and an initial set of arguments.
+  - Allows for the content of a function to be set pernamently
+
+![the bind() function](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/15_javascript-interview.jpg)
+
+## 18. What is the difference between function declarations and function expressions
+
+- Function declarations are hoisted
+- Function expressions are not hoisted
+
+![function expression vs function declaration](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/16_javascript-interview.jpg)
+
+## 19. What are the different types of errors in JavaScript?
+
+## 20. What is memoization in JavaScript?
+
+## 21. What is recursion in JavaScript?
+
+## 22. What is the use of a constructor function in JavaScript?
+
+## 23. What is the difference between a function declaration and a function expression in JavaScript?
+
+## 24. What is a callback function in JavaScript?
