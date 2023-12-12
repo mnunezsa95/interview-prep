@@ -1,4 +1,4 @@
-// source
+source:
 https://builtin.com/software-engineering-perspectives/javascript-interview-questions
 
 ## 1. What is JavaScript?
@@ -108,12 +108,31 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 19. What are the different types of errors in JavaScript?
 
+- A wide variety but most common:
+  1. Syntax Errors -> JS code is NOT syntactically correct
+  2. Runtime Errors -> JS code is executed and there is a problem
+  3. Logical Errors -> JS code does not do what it should do
+
 ## 20. What is memoization in JavaScript?
 
 ## 21. What is recursion in JavaScript?
 
 ## 22. What is the use of a constructor function in JavaScript?
 
+- A constructor function is used to create objects.
+- This constructor function is used to define properties and methods of an object
+
+![constructor](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/20_javascript-interview.jpg)
+
 ## 23. What is the difference between a function declaration and a function expression in JavaScript?
 
+- Function declaration -> created using the 'function' keyword; function declarations are hoisted
+  - A statement that defines a function
+- Function expression -> created using 'const' keyword; function expressions are NOT hoisted
+  - An expression that evaluates to a function
+
 ## 24. What is a callback function in JavaScript?
+
+- A callback function is a function pass as an argument to another function to be invoked later on
+
+![callback function](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/23_javascript-interview.jpg)

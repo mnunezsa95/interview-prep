@@ -1,3 +1,8 @@
+/* ---------------------------------------------------------------------------------------------- */
+/*                                             source                                             */
+// https://www.keka.com/javascript-coding-interview-questions-and-answers#:~:text=Basic%20JavaScript%20questions%20cover%20concepts,DOM%20manipulation%2C%20and%20asynchronous%20programming.
+/* ---------------------------------------------------------------------------------------------- */
+
 // ! Q1: Write a JavaScript function to calculate the sum of two numbers.
 // * create a function that takes in two numbers as inputs and returns the sum
 
@@ -128,3 +133,52 @@ function findLargestElement(nestedArray) {
 
 const value8 = findLargestElement([1, 2, [3, 4, 5]]);
 console.log(value8);
+
+// =======================
+// ! Q10: Write a JavaScript program to convert a string to title case (capitalize the first letter of each word).
+// *
+
+function toTitleCase(str) {
+  // break the string up into words
+  let words = str.split(" ");
+  console.log(words);
+  // loop through each word, split it, capitalize first letter then join it back
+  return words
+    .map((word) => {
+      return word[0].toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+const value10 = toTitleCase("hello, there marlon");
+console.log(value10);
+
+// =======================
+// ! Q12: Write a function that takes an array of objects and a key, and returns a new array sorted based on the values of that key in ascending order.
+// *
+
+function sortByKey(arrOfObj) {
+  return arrOfObj.sort((a, b) => {
+    return b.roll - a.roll;
+  });
+}
+
+const value11 = sortByKey([
+  {
+    name: "Isabella Williams",
+    roll: 38,
+  },
+  {
+    name: "Sophia Heels",
+    roll: 45,
+  },
+  {
+    name: "Ava Benjamin",
+    roll: 17,
+  },
+  {
+    name: "Amelia Brown",
+    roll: 8,
+  },
+]);
+console.log(value11);
