@@ -90,3 +90,43 @@ function findMedian(arr) {
 
 const value4 = findMedian([0, 1, 2, 4, 5, 6, 3]);
 console.log(value4);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                           Question 5:                                          */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* Given an array of integers, where all elements but one occur twice, find the unique element.
+ */
+
+function lonelyinteger(a) {
+  // the filter() method will filter out based on a given condition
+  return a.filter((val, i, arr) => {
+    // the indexOf() will return the first index of a given value
+    // the lastIndexOf() will return the last index of a given value
+    return arr.indexOf(val) === arr.lastIndexOf(val);
+    // if these match, then they will filter out
+  });
+}
+
+const value5 = lonelyinteger([1, 2, 3, 4, 3, 2, 1]);
+console.log(value5);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                           Question 7:                                          */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* Create an integer array whose index range covers the entire range of values in your array to sort. 
+Each time a value occurs in the original array, you increment the counter at that index. */
+
+function countingSort(arr) {
+  // Write your code here
+  let res = new Array(100).fill(0);
+  // loop through ever item in the input array
+  for (let num of arr) {
+    res[num]++; // for the number in the array, add 1 at that position in the resulting array
+  }
+  return res; // return resulting array
+}
+
+const value7 = countingSort([1, 1, 3, 2, 1]);
+console.log(value7);

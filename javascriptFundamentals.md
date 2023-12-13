@@ -17,7 +17,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 - The process of moving declarations to the top of their scope.
 - This means that variables and functions can be used before they are declared
-  - This happens when 'var' is used for varibale
+  - This happens when 'var' is used for variable
   - Function declarations are hoisted (fn expressions are not)
 - This is why the language implemented 'let' and 'const'
 
@@ -55,7 +55,10 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 9. What are closures in JavaScript?
 
--
+- Closure functions --> have access to variables from an outer function after the function has finished executing.
+  - Closure functions remember the environment in which they were created
+
+![Closures](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/7_javascript-interview.jpg)
 
 ## 10. What is event delegation in JavaScript?
 
@@ -79,6 +82,12 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 13. Explain the concept of prototypes in JavaScript
 
+- Prototypes --> a mechanism used by JS objects for inheritance.
+  - Every JS object has a prototype, which provides properties and methods that can be accessed by that object
+- `new Date()`, `new Function()`, `new Object()`, `new Array()` are used to create a new instance of each kind of prototype
+
+![Prototypes](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/11_javascript-interview.jpg)
+
 ## 14. What is the output of the following code?
 
 - Output: "57" (string type)
@@ -95,10 +104,14 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 16. What are higher-order functions in JavaScript?
 
+- HOFs are functions that accept other functions as arguments or return functions as their results.
+
+![HOFs](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/14_javascript-interview.jpg)
+
 ## 17. What is the purpose of the bind() method in JavaScript
 
-- The bind() method is used to create a new function with a specific 'this' valiue and an initial set of arguments.
-  - Allows for the content of a function to be set pernamently
+- The bind() method is used to create a new function with a specific 'this' value and an initial set of arguments.
+  - Allows for the content of a function to be set permanently
 
 ![the bind() function](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/15_javascript-interview.jpg)
 
@@ -150,7 +163,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 ## 26. What is the difference between synchronous and asynchronous programming?
 
 - Synchronous programming occurs in order; each statement blocks the execution until it is completed
-- Asynchronous programming allows for multiple taks to be executed at the same time; the program doesnt have to finish a task before moving onto the next one
+- Asynchronous programming allows for multiple tasks to be executed at the same time; the program doesn't have to finish a task before moving onto the next one
 
 ![asynchronous code](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/26_javascript-interview.jpg)
 
@@ -163,6 +176,13 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 ![try-catch](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/27_javascript-interview.jpg)
 
 ## 28. Explain the concept of event bubbling in JavaScript.
+
+- Event Bubbling -> the process where an event triggers on a nested element and the same event is propagated to its parent elements in the DOM tree
+  - Starts from the innermost element and goes up (towards the document object)
+
+![parent](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/28_javascript-interview.jpg)
+
+![child](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/29_javascript-interview.jpg)
 
 ## 29. What are arrow functions in JavaScript?
 
@@ -177,7 +197,18 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 31. What is the purpose of the setTimeout() function in JavaScript?
 
+- `setTimeout()` --> is used to delay the execution of a function or the evaluation of an expression by a specified amount of time (in milliseconds)
+
+![setTimeout()](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/32_javascript-interview.jpg)
+
+![result of setTimeout()](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/33_javascript-interview.jpg)
+
 ## 32. What is event delegation and why is it useful?
+
+- Event Delegation --> a technique where an event listener is attached to a parent element to handle events occuring in the children
+- Useful for dynamically create elements
+
+![event delegation](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/34_javascript-interview.jpg)
 
 ## 33. How can you prevent the default behavior of an event in JavaScript?
 
@@ -216,7 +247,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 38. What is the purpose of the reduce() function in JavaScript?
 
-- `reduce()` --> used to reduce an array down to a single value by applicating a function to each element and accumulating the result
+- `reduce()` --> used to reduce an array down to a single value by applying a function to each element and accumulating the result
 
 ![reduce() method](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/41_javascript-interview.jpg)
 
@@ -227,11 +258,17 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ![includes() method](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/42_javascript-interview.jpg)
 
-# 40. What is the difference between prototype and instance properties in JavaScript?
+## 40. What is the difference between prototype and instance properties in JavaScript?
 
 ## 41. What is the difference between an array and an object in JavaScript?
 
 ## 42. How can you remove duplicates from an array in JavaScript?
+
+- Duplicates can be removed a variety of way(s)
+  1. Using the `new Set()` object
+  2. Using the `filter()` method with the `indexOf()` method
+
+![removing duplicates](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/44_javascript-interview.jpg)
 
 ## 43. What is the purpose of the fetch() function in JavaScript?
 
