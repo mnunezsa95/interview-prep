@@ -306,3 +306,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
   - `React.js` --> frontend development of a web app
   - `Angular.js` --> frontend development of a web app
   - `Node.js` --> backend / server-side development of a web app
+
+## 61. What is the typeof operator?
+
+- Type of operator is used to determine the data type of something
