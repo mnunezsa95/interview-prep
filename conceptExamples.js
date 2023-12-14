@@ -15,6 +15,23 @@ const d = 3;
 console.log(d); // Output: 3; if we tried to resassign it would produce an error
 
 //! * ---------------------------------------------------------------------------------------------- */
+//! *                                         Types of Scope                                         */
+//! * ---------------------------------------------------------------------------------------------- */
+
+var a = 5; // this variable globally-scoped scope
+function adder() {
+  let b = 7; // this variable is function-scoped; cannot be accessed outside this function
+  console.log(a + b);
+}
+
+adder();
+
+{
+  const c = 10; // this variable is block-scoped; cannot be accessed outside this block
+  console.log(c);
+}
+
+//! * ---------------------------------------------------------------------------------------------- */
 //! *                                            Closures                                            */
 //! * ---------------------------------------------------------------------------------------------- */
 
@@ -67,6 +84,7 @@ mother.greet(); // Output: Hello, Ana
 //! *                                              HOFs                                              */
 //! * ---------------------------------------------------------------------------------------------- */
 
+//* Example 1
 // A simple multiplication function
 function multiplyByTwo(num) {
   return num * 2;
@@ -79,3 +97,13 @@ function applyOperation(num, operation) {
 
 let res = applyOperation(5, multiplyByTwo);
 console.log(res);
+
+//* Example 2
+const greet = () => {
+  const prefix = "Mr";
+  return (name) => {
+    console.log(`${prefix} ${name}, welcome!`);
+  };
+};
+
+greet()("Jack");
