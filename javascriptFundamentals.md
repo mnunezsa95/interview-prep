@@ -312,42 +312,53 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 ## 52. What are the two way of embedding JavaScript code
 
 - Write JS code in a separate file (JS) and import it using the `<script>` tag
-- Write JS code witin `<script>` tag inside the HTML file
+- Write JS code within `<script>` tag inside the HTML file
 
-## 54. What do you understand about cookies?
+## 53. What do you understand about cookies?
 
 - A cookie is generally a small data file sent from a website and stored on the user's machine
-- Cookies are used to remmeber information for later use
+- Cookies are used to remember information for later use
 
-## 55. How to create a cookie?
+## 54. How to create a cookie?
 
 - Use the `document.cookie = key1 : value1; key2 : value2; key3 : value3`
 
-## 56. How to read a cookie?
+## 55. How to read a cookie?
 
 - Use the `document.cookie` string that contains the cookies in the form of a key-value pairs
 
-## 57. How would you delete a cookie?
+## 56. How would you delete a cookie?
 
 - A cookie can be deleted by setting an expiration date and time;
 
-## 58. What are imports and exports in JavaScript?
+## 57. What are imports and exports in JavaScript?
 
 - Imports and exports help with writing modular JS
 - Allows for JS code to be split into multiple files
 
-## 59. What is the different between the document and window in JavaScript
+## 58. What is the different between the document and window in JavaScript?
 
 - `document` --> found under window object
 - `window` --> a global object that holds the structure
 
-## 60. What are some of the JS frameworks and their use?
+## 59. What are some of the JS frameworks and their use?
 
 - Frameworks aim to fulfill different aspects of the web application process
   - `React.js` --> frontend development of a web app
   - `Angular.js` --> frontend development of a web app
   - `Node.js` --> backend / server-side development of a web app
 
-## 61. What is the typeof operator?
+## 60. What is the typeof operator?
 
 - Type of operator is used to determine the data type of something
+
+## 61. What are the 3 types of scope in JavaScript?
+
+- Global Scope (declaration outside of any function)
+- Function Scope (declaration inside a function)
+- Block Scope (declaration inside a block)
+
+## 62. Disadvantages of Closures?
+
+- Can lead to overconsumption and memory leaks
+  - Closed-over variable will not be "garbage-collected" (removal of unused variables)

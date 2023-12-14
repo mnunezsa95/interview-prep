@@ -36,12 +36,11 @@ adder();
 //! * ---------------------------------------------------------------------------------------------- */
 
 /* 
-What are closures? function that have access to variables from an outer function after the function has finished executing.
-Closure functions remember the environment in which they were created 
+What are closures? Functions that have access to variables from an outer function after the function has 
+finished executing. Closure functions remember the environment in which they were created 
 */
 
-// --Example
-
+// * Example 1:
 // there is an outer function called "outerFunction"
 function outerFunction(outerVariable) {
   // the outerFunction returns a new function called "innerFunction"
@@ -54,6 +53,19 @@ function outerFunction(outerVariable) {
 const newFunction = outerFunction("Outside");
 newFunction("inside");
 console.log(newFunction);
+
+// * Example 2:
+function x() {
+  var a = 7;
+  function y() {
+    console.log(a);
+  }
+  return y;
+}
+
+let z = x();
+console.log(z); // Output: [Function: y]
+z(); // Will return 7, b/c this is the result of x()
 
 //! * ---------------------------------------------------------------------------------------------- */
 //! *                                           Prototypes                                           */
