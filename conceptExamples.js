@@ -1,6 +1,22 @@
-/* ---------------------------------------------------------------------------------------------- */
-/*                                            Closures                                            */
-/* ---------------------------------------------------------------------------------------------- */
+//! * ---------------------------------------------------------------------------------------------- */
+//! *                                       let, var and const                                       */
+//! * ---------------------------------------------------------------------------------------------- */
+
+var a = 3;
+var a = 4;
+console.log(a); // Output: 4 b/c variables can be reassigned when using var
+
+let b = 3;
+b = 4;
+console.log(b); // Output: 4 b/c variables can be reassigned
+// let cannot be re-declared (meaning we cannot use let b = 4 again)
+
+const d = 3;
+console.log(d); // Output: 3; if we tried to resassign it would produce an error
+
+//! * ---------------------------------------------------------------------------------------------- */
+//! *                                            Closures                                            */
+//! * ---------------------------------------------------------------------------------------------- */
 
 /* 
 What are closures? function that have access to variables from an outer function after the function has finished executing.
@@ -22,9 +38,9 @@ const newFunction = outerFunction("Outside");
 newFunction("inside");
 console.log(newFunction);
 
-/* ---------------------------------------------------------------------------------------------- */
-/*                                           Prototypes                                           */
-/* ---------------------------------------------------------------------------------------------- */
+//! * ---------------------------------------------------------------------------------------------- */
+//! *                                           Prototypes                                           */
+//! * ---------------------------------------------------------------------------------------------- */
 
 // using a constructor() function to create a Person Object
 function Person(name, age, height) {
@@ -47,9 +63,9 @@ Person.prototype.greet = function () {
 father.greet(); // Output: Hello, John
 mother.greet(); // Output: Hello, Ana
 
-/* ---------------------------------------------------------------------------------------------- */
-/*                                              HOFs                                              */
-/* ---------------------------------------------------------------------------------------------- */
+//! * ---------------------------------------------------------------------------------------------- */
+//! *                                              HOFs                                              */
+//! * ---------------------------------------------------------------------------------------------- */
 
 // A simple multiplication function
 function multiplyByTwo(num) {
@@ -63,5 +79,3 @@ function applyOperation(num, operation) {
 
 let res = applyOperation(5, multiplyByTwo);
 console.log(res);
-
-//

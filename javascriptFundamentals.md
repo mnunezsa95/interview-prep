@@ -5,6 +5,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 - JavaScript is a high-level, intrepreted programming language, that makes it possible to create interactive web pages and online applications
 - JS can be understood by browser and inserted in `HTML`
+- Loosely-typed --> don't need to state the type of variable (JS figures it out alone)
 
 ## 2. What are the different data types in JavaScript?
 
@@ -70,10 +71,13 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 11. What is the difference between “let”, “const”, and “var”?
 
-- 'let' and 'const' (intro in ES6) have block scope
-- 'var' is function scoped
-- 'const' cannot be reassigned; 'let' can
-- 'var' can be reassigned throughout the function
+- `let` and `const` (intro in ES6) have block scope
+  - `let` and `const` are NOT hoisted
+- `let` can be re-assigned
+- `const` cannot be reassigned
+- `var` is functionally or globally scoped
+  - Can be reassigned throughout the function
+  - Is hoisted
 
 ## 12. What is implicit type coercion in JavaScript?
 
