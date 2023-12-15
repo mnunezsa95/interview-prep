@@ -119,3 +119,62 @@ const greet = () => {
 };
 
 greet()("Jack");
+
+//! * ---------------------------------------------------------------------------------------------- */
+//! *                                       The 'this' keyword                                       */
+//! * ---------------------------------------------------------------------------------------------- */
+
+// An object for an airline
+const lufthansa = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+  book(flightNum, name) {
+    // the 'this' keyword points back to this object; allows the method to have context on which object called it
+    console.log(`${name} booked a set on ${this.airline} flight ${this.iataCode}${flightNum}`);
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, "Marlon Nunez");
+lufthansa.book(635, "John Smith");
+
+// * This airline to also have a book() function, but should not not copy the code
+const eurowings = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+};
+
+const swiss = {
+  airline: "Swiss Airlines",
+  iataCode: "LX",
+  bookings: [],
+};
+
+const emirate = {
+  airline: "Emirate Airlines",
+  iataCode: "EM",
+  bookings: [],
+};
+
+// * Making a copy
+const book = lufthansa.book;
+
+// * Using the call() and apply() methods
+
+book.call(eurowings, 400, "Sarah Williams");
+console.log(eurowings);
+
+book.call(lufthansa, 23, "Mary Cooper");
+console.log(lufthansa);
+
+// apply() takes in an array as second argument
+let flightData = [583, "George Cooper"];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+// * Using the bind() method
+bookEM = book.bind(emirate, 100);
+bookEM("Marlon Nunez");
+console.log(emirate);

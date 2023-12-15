@@ -35,8 +35,9 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 6. What is the purpose of the “this” keyword in JavaScript?
 
-- Refers to the current object that is executing the current method (or function).
-- Allows access to the object properties and methods within the context of that object
+- “This” keyword refers to an object that is executing the current piece of code.
+- It references the object that is executing the current function.
+- If the function being referenced is a regular function, “this” references the global object (window on browser, global on node)
   ![this keyword](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/4_javascript-interview.jpg)
 
 ## 7. What is the difference between == and === operators in JavaScript?
@@ -82,7 +83,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 ## 12. What is implicit type coercion in JavaScript?
 
 - 'Implicit Type Coercion' is the process of converting a value from one data type to another
-  - Example: adding a STRING & a NUMBER; JS will coerce the string to a number before the operation
+  - Example: adding a STRING & a NUMBER; JS will coerce the number to a string before the operation
 
 ## 13. Explain the concept of prototypes in JavaScript
 
@@ -192,7 +193,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 - Arrow functions are a shorthand syntax for writing function
 - More compact syntax than traditional function expressions
-- Inherit the `this` keyword from their surrounding scope
+- Inherit the `this` keyword from their parent scope
 
 ## 30. What is the difference between querySelector and getElementById?
 
@@ -362,3 +363,8 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 - Can lead to overconsumption and memory leaks
   - Closed-over variable will not be "garbage-collected" (removal of unused variables)
+
+## 63. How can you take elements from a nested array and bring them up to the first level
+
+- The array prototype built-in method `flat()` can be used to flatten an array
+- Each time the `flat()` is called, only one level is flattened

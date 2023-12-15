@@ -1,3 +1,7 @@
+/* ---------------------------------------------------------------------------------------------- */
+/*                                Basic JavaScript coding questions                               */
+/* ---------------------------------------------------------------------------------------------- */
+
 // ! Q1: Write a JavaScript function to calculate the sum of two numbers.
 // * create a function that takes in two numbers as inputs and returns the sum
 
@@ -148,8 +152,12 @@ function toTitleCase(str) {
 const value10 = toTitleCase("hello, there marlon");
 console.log(value10);
 
+/* ---------------------------------------------------------------------------------------------- */
+/*                         Advanced JavaScript coding interview questions                         */
+/* ---------------------------------------------------------------------------------------------- */
+
 // ============================================================================================================
-// ! Q12: Write a function that takes an array of objects and a key, and returns a new array sorted based on the values of that key in ascending order.
+// ! Q2: Write a function that takes an array of objects and a key, and returns a new array sorted based on the values of that key in ascending order.
 // *
 
 function sortByKey(arrOfObj) {
@@ -179,7 +187,7 @@ const value11 = sortByKey([
 console.log(value11);
 
 // ============================================================================================================
-// ! Q13: Implement a deep clone function in JavaScript that creates a copy of a nested object or array without any reference to the original.
+// ! Q3: Implement a deep clone function in JavaScript that creates a copy of a nested object or array without any reference to the original.
 // *
 
 function deepClone(obj) {
@@ -209,7 +217,20 @@ console.log(arrayForTest === value13ArrayClone);
 console.log(objectForTest === value13ObjectClone);
 
 // ============================================================================================================
-// ! Q14: Write a function that determines if two strings are anagrams of each other.
+
+//! Q8: Implement a function that flattens a nested array in JavaScript, converting it into a single-level array.
+
+function flattenArray(arr) {
+  const flatArr = arr.flat().flat();
+  console.log(flatArr);
+  return flatArr;
+}
+
+flattenArray([1, 2, 3, [4, 5, 6, [7, 8, 9]]]);
+
+// ============================================================================================================
+
+// ! Q9: Write a function that determines if two strings are anagrams of each other.
 // * Create a fn, takes two strings, compares the chars at each position
 
 function isAnagram(str1, str2) {
@@ -220,3 +241,42 @@ const value14Test1 = isAnagram("listen", "silent");
 const value14Test2 = isAnagram("marlon", "listen");
 console.log(value14Test1);
 console.log(value14Test2);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                          Common JavaScript coding interview questions                          */
+/* ---------------------------------------------------------------------------------------------- */
+
+// ! Q4: Write a function that takes an array of integers as input and returns a new array with only the unique elements.
+function getUnqiueElements(arr) {
+  const uniqueValues = new Set([...arr]);
+  const newArr = Array.from(uniqueValues);
+  console.log(newArr);
+  return newArr;
+}
+
+getUnqiueElements([1, 2, 2, 3, 3, 4]);
+
+// ============================================================================================================
+
+// ! Q5: 8. Given a string, write a function to count the occurrences of each character in the string.
+
+function countCharOccurences(str) {
+  const charCount = {};
+  str = str.toLowerCase();
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  console.log(charCount);
+}
+
+// ============================================================================================================
+
+countCharOccurences("mArlonNunez");
+
+// ! Q10. Write a function that sorts an array of numbers in ascending order.
+function sortNumsInAscOrder(arr) {
+  const sortedArr = arr.sort((a, b) => a - b);
+  console.log(sortedArr);
+}
+
+sortNumsInAscOrder([2, 8, 9, 5, 3, 1, 0, 4, 7, 6]);
