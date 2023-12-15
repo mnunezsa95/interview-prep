@@ -315,3 +315,26 @@ function calculateAverage(numbers) {
 }
 
 calculateAverage([20, 30, 10, 5, 5, 30, 0]);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                 Additional JavaScript Questions                                */
+/* ---------------------------------------------------------------------------------------------- */
+/* Write a function that accepts a String as an argument. The function should capitalize ONLY every
+other letter in the string. The function should then return the converted String
+*/
+
+// * Think about edge cases first
+function capEveryOtherLetter(str) {
+  str = str.toLowerCase().split("");
+  let res = [];
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      res.push(str[i].toUpperCase());
+    } else {
+      res.push(str[i]);
+    }
+  }
+  return res.join("");
+}
+
+console.log(capEveryOtherLetter("heLlo"));
