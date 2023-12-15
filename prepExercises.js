@@ -280,3 +280,38 @@ function sortNumsInAscOrder(arr) {
 }
 
 sortNumsInAscOrder([2, 8, 9, 5, 3, 1, 0, 4, 7, 6]);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                               Tricky JavaScript coding questions                               */
+/* ---------------------------------------------------------------------------------------------- */
+
+// ! Q9. Write a function that generates a random alphanumeric string of a given length.
+function generateRandomString(length) {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters.charAt(randomIndex);
+  }
+  console.log(result);
+  return result;
+}
+
+// generateRandomString(27);
+// generateRandomString(10);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                JavaScript array coding questions                               */
+/* ---------------------------------------------------------------------------------------------- */
+
+// ! Q4: Implement a function that returns the average value of numbers in an array.
+function calculateAverage(numbers) {
+  const avg = (
+    numbers.reduce((acc, currValue) => {
+      return acc + currValue;
+    }, 0) / numbers.length
+  ).toFixed(5);
+  console.log(avg);
+}
+
+calculateAverage([20, 30, 10, 5, 5, 30, 0]);

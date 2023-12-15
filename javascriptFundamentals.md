@@ -364,7 +364,7 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 - Can lead to overconsumption and memory leaks
   - Closed-over variable will not be "garbage-collected" (removal of unused variables)
 
-## 63. How can you take elements from a nested array and bring them up to the first level
+## 63. How can you take elements from a nested array and bring them up to the first level?
 
 - The array prototype built-in method `flat()` can be used to flatten an array
 - Each time the `flat()` is called, only one level is flattened

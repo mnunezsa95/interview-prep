@@ -25,7 +25,7 @@ twoSum([3, 2, 4], 6);
 twoSum([3, 3], 6);
 
 /* ---------------------------------------------------------------------------------------------- */
-/*                                    Question 2: isPalindrome                                    */
+/*                                    Question 9: isPalindrome                                    */
 /* ---------------------------------------------------------------------------------------------- */
 
 /* Given an integer x, return true if x is a palindrome, and false otherwise.
@@ -44,7 +44,7 @@ isPalindrome(121);
 isPalindrome(10);
 
 /* ---------------------------------------------------------------------------------------------- */
-/*                                  Question 3: Roman to Integer                                  */
+/*                                 Question 13: Roman to Integer                                  */
 /* ---------------------------------------------------------------------------------------------- */
 
 const romanToInt = (s) => {
@@ -98,3 +98,67 @@ romanToInt("CMX");
 romanToInt("CDm");
 
 console.log("15" + 5);
+
+// ? ---------------------------------------------------------------------------------------------- */
+// ?                            Q26: Remove Duplicates from Sorted Array                            */
+// ? ---------------------------------------------------------------------------------------------- */
+/* Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each 
+unique element appears only once. The relative order of the elements should be kept the same. Then return the 
+number of unique elements in nums.*/
+
+const removeDuplicates = (nums) => {
+  let k = 1;
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[i - 1]) {
+      nums[k] = nums[i];
+      k++;
+    }
+  }
+  return k;
+};
+
+removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                      Question 69: Sqrt(x)                                      */
+/* ---------------------------------------------------------------------------------------------- */
+/* Given a non-negative integer x, return the square root of x rounded down to the nearest integer. 
+The returned integer should be non-negative as well. */
+
+function mySqrt(x) {
+  let res = Math.floor(x ** (1 / 2));
+  console.log(res);
+  return res;
+}
+
+mySqrt(8);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                Question 28: Find the Index of the First Occurrence in a String                 */
+/* ---------------------------------------------------------------------------------------------- */
+/* Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if 
+needle is not part of haystack. */
+
+const strStr = (haystack, needle) => {
+  if (haystack.includes(needle)) {
+    return haystack.indexOf(needle);
+  }
+  return -1;
+};
+
+strStr("sadbutsad", "sad"); // Exp Output: 0
+strStr("leetcode", "leeto"); // Exp Output: 1
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                   Question 136: Single Number                                  */
+/* ---------------------------------------------------------------------------------------------- */
+/* Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+You must implement a solution with a linear runtime complexity and use only constant extra space. */
+
+function singleNumber(nums) {
+  // loop array & filter out based on condition;
+  // condition = if the index of a specific number is the same as the last index of the same number
+  return nums.filter((num) => nums.indexOf(num) === nums.lastIndexOf(num));
+}
+
+singleNumber([2, 2, 1]);
