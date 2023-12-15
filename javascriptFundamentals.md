@@ -136,7 +136,18 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 20. What is memoization in JavaScript?
 
+- Memoization is a technique that can be used to improve the performance of JavaScript code.
+- Memoization works by storing the results of expensive calculations in a cache.
+- This allows the JavaScript code to avoid re-performing the expensive calculations if the same input is provided again.
+
+![memorization](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/17_javascript-interview.jpg)
+
 ## 21. What is recursion in JavaScript?
+
+- Recursion is a programming technique that allows a function to call itself.
+- Recursion can be used to solve a variety of problems, such as finding the factorial of a number or calculating the Fibonacci sequence.
+
+![recurrsion](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/19_javascript-interview.jpg)
 
 ## 22. What is the use of a constructor function in JavaScript?
 
@@ -265,7 +276,19 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 40. What is the difference between prototype and instance properties in JavaScript?
 
+- A prototype property is a property that is defined on the prototype object of a constructor function
+- Prototype properties are shared by all objects that are created by a constructor function.
+- Instance properties are properties that are defined on individual objects that are created by a constructor function.
+- Instance properties are not shared by other objects.
+
 ## 41. What is the difference between an array and an object in JavaScript?
+
+- An array is a data structure that can store a collection of values.
+- Arrays are indexed by numbers.
+- Arrays can only store primitive data types and objects
+- An object is a data structure that can store a collection of properties/methods.
+- Objects are indexed by strings.
+- Objects can store primitive data types, objects and arrays.
 
 ## 42. How can you remove duplicates from an array in JavaScript?
 
@@ -277,7 +300,16 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 43. What is the purpose of the fetch() function in JavaScript?
 
+- The `fetch()` function is used to make asynchronous HTTP requests in JavaScript. It returns a Promise that resolves to the response from the server.
+
+![fetch() function](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/45_javascript-interview.jpg)
+
 ## 44. What is a generator function in JavaScript?
+
+- A generator function is a special type of function that can be paused and resumed during its execution.
+- It allows generating a sequence of values over time, using the yield keyword.
+
+![generator function](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/46_javascript-interview.jpg)
 
 ## 45. What are the different events in JavaScript?
 
@@ -295,7 +327,15 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 ## 47. What is the scope of a variable in JavaScript?
 
+- The scope of a variable in JavaScript is the part of the code where the variable can be accessed.
+
 ## 48. What are the different ways to create objects in JavaScript?
+
+- Using object literal syntax
+- Using `object.create()`
+- Constructor function
+
+![creating object](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/47_javascript-interview.jpg)
 
 ## 49. What is the purpose of the window object in JavaScript?
 
@@ -303,6 +343,11 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
   - Can be used to access browser's features (location bar, status bar, bookmark bar, etc)
 
 ## 50. What is the purpose of the async and await keywords in JavaScript?
+
+- The `async` and `await` keywords are used for handling asynchronous operations in a more synchronous-like manner.
+- The `async` keyword is used to define an asynchronous function, and the `await` keyword is used to pause the execution of an async function until a promise is fulfilled or rejected.
+
+![async/await](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/48_javascript-interview.jpg)
 
 ## 51. What are the naming conventions of a variable
 
@@ -368,3 +413,32 @@ https://builtin.com/software-engineering-perspectives/javascript-interview-quest
 
 - The array prototype built-in method `flat()` can be used to flatten an array
 - Each time the `flat()` is called, only one level is flattened
+
+## 64. Single line comment
+
+- // comment
+
+## 65. Double line comment
+
+- // comment //
+
+## 66. What is `document.write(...);` used for?
+
+- Syntax to write "..." on the webpage
+
+## 67. What is an integer?
+
+- Data type that is any whole number
+
+## 68. What is a floating-point number?
+
+- A decimal type number
+
+## 69. What is the string data type?
+
+- Collection of text (word, sentence, or paragraph); MUST surround in quotations (single, double or backticks)
+
+## 70. How do you ignore quotation marks and treat them as text?
+
+- ..."\"...
+- Use the forward slash to break out of the " "
