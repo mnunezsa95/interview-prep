@@ -444,3 +444,136 @@ console.log(quicksum("BBC"));
 console.log(quicksum("AAB"));
 console.log(quicksum("234 234 WEF ASDF AAA 554211 ???? "));
 console.log(quicksum(" "));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                   Question 18: Well of Ideas                                   */
+/* ---------------------------------------------------------------------------------------------- */
+/* 
+For every good kata idea there seem to be quite a few bad ones!
+
+In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there 
+are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there 
+are no good ideas, as is often the case, return 'Fail!'.
+*/
+function well(x) {
+  let publishOrSeries = 0;
+  let fail = 0;
+  x.forEach((val, i, arr) => {
+    if (val === "good") {
+      publishOrSeries++;
+    } else {
+      fail++;
+    }
+  });
+  if (publishOrSeries > 2) return "I smell a series!";
+  if (publishOrSeries > 0 && publishOrSeries <= 2) return `Publish!`;
+  else return "Fail!";
+}
+
+console.log(well(["good", "bad", "bad", "bad", "bad"]));
+console.log(well(["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]));
+console.log(well(["bad", "bad", "bad"]));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                  Question 19: Binary to String                                 */
+/* ---------------------------------------------------------------------------------------------- */
+/*
+Your computer has forgotten how to speak ASCII! (or Unicode, whatever) It can only communicate in binary, 
+and it has something important to tell you. Write a function which will receive a long string of binary 
+code and convert it to a string. Remember, in Python binary output starts with '0b'.
+
+As an example: binary_to_string('0b10000110b11000010b1110100') == 'Cat'
+
+Input may consist of upper and lower case letters and numbers, in binary form of course, as well as special 
+symbols. The input to your function will always be one string of binary.
+*/
+function binaryToString(binary) {
+  // split binary input (removing 0b)
+  // map a string from CharCode(parseInt)
+  // join the string, remove any weird symbols
+  let binaryOutput = binary
+    .split("0b")
+    .map((bin) => String.fromCharCode(parseInt(bin, 2)))
+    .join("")
+    .slice(1);
+  console.log(binaryOutput);
+  return binaryOutput;
+}
+
+console.log(binaryToString("0b10000110b11000010b1110100"));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                           Question 20: Sum of differences in an array                          */
+/* ---------------------------------------------------------------------------------------------- */
+/*
+Your task is to sum the differences between consecutive pairs in the array in descending order.
+
+Example
+[2, 1, 10]  -->  9
+In descending order: [10, 2, 1]
+
+Sum: (10 - 2) + (2 - 1) = 8 + 1 = 9
+
+If the array is empty or the array has only one element the result should be 0 (Nothing in Haskell, None in Rust).
+*/
+
+function sumOfDifferences(arr) {
+  let res = [];
+  if (arr.length === 0 || arr.length === 1) return 0;
+  let a = arr.sort((a, b) => b - a);
+  for (let i = 0; i < a.length; i++) {
+    res.push(a[i] - a[i + 1]);
+  }
+  res.pop();
+  return res.reduce((acc, currVal) => {
+    return acc + currVal;
+  }, 0);
+}
+
+console.log(sumOfDifferences([1, 2, 10])); // 9
+console.log(sumOfDifferences([-3, -2, -1])); // 2
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                      Question 21: Welcome!                                     */
+/* ---------------------------------------------------------------------------------------------- */
+/* 
+Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding countries. 
+Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you already use an API
+that detects the user's location, so this is an easy win.
+
+The Task
+Think of a way to store the languages as a database. Write a 'welcome' function that takes a parameter 'language', with 
+a type String, and returns a greeting - if you have it in your database. It should default to English if the language 
+is not in the database, or in the event of an invalid input.
+*/
+
+function greetQ21(language) {
+  const languages = {
+    english: "Welcome",
+    czech: "Vitejte",
+    danish: "Velkomst",
+    dutch: "Welkom",
+    estonian: "Tere tulemast",
+    finnish: "Tervetuloa",
+    flemish: "Welgekomen",
+    french: "Bienvenue",
+    german: "Willkommen",
+    irish: "Failte",
+    italian: "Benvenuto",
+    latvian: "Gaidits",
+    lithuanian: "Laukiamas",
+    polish: "Witamy",
+    spanish: "Bienvenido",
+    swedish: "Valkommen",
+    welsh: "Croeso",
+  };
+  if (languages[language.toLowerCase()]) {
+    return languages[language.toLowerCase()];
+  } else {
+    return "Welcome";
+  }
+}
+
+console.log(greetQ21("lithuanian"));
+console.log(greetQ21("czech"));
+console.log(greetQ21("polish"));
