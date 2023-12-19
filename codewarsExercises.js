@@ -577,3 +577,55 @@ function greetQ21(language) {
 console.log(greetQ21("lithuanian"));
 console.log(greetQ21("czech"));
 console.log(greetQ21("polish"));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                            Question 22: Sort array by string length                            */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+Write a function that takes an array of strings as an argument and returns a sorted array containing 
+the same strings, ordered from shortest to longest. For example, if this array were passed as an argument:
+
+["Telescopes", "Glasses", "Eyes", "Monocles"]
+
+Your function would return the following array:
+["Eyes", "Glasses", "Monocles", "Telescopes"]
+
+All of the strings in the array passed to your function will be different lengths, so you will not have to 
+decide how to order multiple strings of the same length.
+*/
+
+function sortByLength(array) {
+  if (array) {
+    let sortedArray = array.sort((a, b) => {
+      return a.length - b.length;
+    });
+    console.log(sortedArray);
+    return sortedArray;
+  } else {
+    return `The input is not an array`;
+  }
+}
+
+sortByLength(["", "Moderately", "Brains", "Pizza"]);
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                     Question 23: Power of 4                                    */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+Write a method that returns true if a given parameter is a power of 4, and false if it's not. If parameter is 
+not an Integer (eg String, Array) method should return false as well.
+
+powerOf4(1024) // returns true 4^4^4
+powerOf4(44) // returns false
+powerOf4("not a positive integer") // returns false
+*/
+function powerOf4(n) {
+  return n === 1 || (n > 0 && Math.pow(4, Math.round(Math.log(n) / Math.log(4))) === n);
+}
+
+console.log(powerOf4(8));
+console.log(powerOf4(16));
+console.log(powerOf4(1));
+console.log(powerOf4(4));
