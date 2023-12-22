@@ -815,3 +815,150 @@ console.log(
     ["", "a", "", "", "", "", "", ""],
   ])
 );
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                 Question 28: Cascading Subsets                                 */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+Create a method each_cons that accepts a list and a number n, and returns cascading subsets of the list 
+of size n, like so:
+
+each_cons([1,2,3,4], 2)
+  #=> [[1,2], [2,3], [3,4]]
+
+each_cons([1,2,3,4], 3)
+  #=> [[1,2,3],[2,3,4]]
+
+As you can see, the lists are cascading; ie, they overlap, but never out of order.
+*/
+
+function eachCons(array, n) {
+  // array to hold results
+  const results = [];
+  // for loop
+  for (let i = 0; i < array.length; i++) {
+    // add to results starting at poisition 0 and ending at position n, repeat
+    results.push(array.slice(i, i + n));
+  }
+
+  // filter out arrays that are shorter than n;
+  return results.filter((e) => e.length === n);
+}
+
+// if not filtered, the results would include [8, 13] and [13]
+console.log(eachCons([3, 5, 8, 13], 3));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                      Question 29: Multiply                                     */
+/* ---------------------------------------------------------------------------------------------- */
+/* 
+This code does not execute properly. Try to figure out why:
+function multiply(a, b){
+  a * b
+}
+*/
+
+// missing a return statement
+function multiplyDebug(a, b) {
+  return a * b;
+}
+
+console.log(multiplyDebug(3, 3));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                              Question 30: Basic data types--object                             */
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+In javascript, Object is one of basic data types. Define an Object can use var obj=new Object() or 
+var obj={}
+
+Give you a function animal, accept 1 parameter:obj like this: {name:"dog",legs:4,color:"white"}
+and return a string like this: "This white dog has 4 legs."
+*/
+
+function animal(obj) {
+  let object = new Object(obj);
+  return `This ${object.color} ${object.name} has ${object.legs} legs.`;
+}
+
+animal({ name: "dog", legs: 4, color: "white" });
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                  Question 31: Ensure Question                                  */
+/* ---------------------------------------------------------------------------------------------- */
+/*
+Given a string, write a function that returns the string with a question mark ("?") appends to the end, 
+unless the original string ends with a question mark, in which case, returns the original string.
+
+For example (Input --> Output)
+"Yes" --> "Yes?" 
+"No?" --> "No?"
+*/
+
+function ensureQuestion(s) {
+  console.log(s.includes("?"));
+  if (!s.includes("?")) {
+    return `${s}?`;
+  }
+  return s;
+}
+
+console.log(ensureQuestion(""));
+console.log(ensureQuestion("No"));
+console.log(ensureQuestion("No?"));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                Question 32: Freudian translator                                */
+/* ---------------------------------------------------------------------------------------------- */
+/*
+You probably know that number 42 is "the answer to life, the universe and everything" according to Douglas 
+Adams' "The Hitchhiker's Guide to the Galaxy". For Freud, the answer was quite different...
+
+In the society he lived in, people - women in particular - had to repress their sexual needs and desires. 
+This was simply how the society was at the time. Freud then wanted to study the illnesses created by this, 
+and so he digged to the root of their desires. This led to some of the most important psychoanalytic 
+theories to this day, Freud being the father of psychoanalysis.
+
+Now, basically, when a person hears about Freud, s/he hears "sex" because for Freud, everything was related 
+to, and explained by sex.
+
+In this kata, the function will take a string as its argument, and return a string with every word replaced 
+by the explanation to everything, according to Freud. Note that an empty string, or no arguments, 
+should return an empty string.
+*/
+
+function toFreud(string) {
+  if (!string) return "";
+  return string
+    .split(" ")
+    .map((word) => "sex")
+    .join(" ");
+}
+
+console.log(toFreud("This is a test"));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                    Question 33: Age in days                                    */
+/* ---------------------------------------------------------------------------------------------- */
+/*
+Did you ever want to know how many days old are you? Complete the function which returns your age in days. 
+The birthday is given in the following order: year, month, day.For example if today is 30 November 2015 
+then
+
+ageInDays(2015, 11, 1) returns "You are 29 days old"
+The birthday is expected to be in the past.
+
+Suggestions on how to improve the kata are welcome!
+*/
+function ageInDays(name, year, month, day) {
+  let todaysDate = new Date();
+  let birthDate = new Date(year, month - 1, day);
+  let millisecondsPerDay = 1000 * 60 * 60 * 24;
+  return `${name} is ${Math.floor((todaysDate - birthDate) / millisecondsPerDay)} days old`;
+}
+
+console.log(ageInDays("Marlon", 1995, 10, 31));
+console.log(ageInDays("Mauro", 2006, 12, 21));
+console.log(ageInDays("Marvin", 2001, 1, 28));
