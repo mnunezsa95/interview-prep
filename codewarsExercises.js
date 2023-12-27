@@ -962,3 +962,70 @@ function ageInDays(name, year, month, day) {
 console.log(ageInDays("Marlon", 1995, 10, 31));
 console.log(ageInDays("Mauro", 2006, 12, 21));
 console.log(ageInDays("Marvin", 2001, 1, 28));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                Question 34: Generate user links                                */
+/* ---------------------------------------------------------------------------------------------- */
+/* 
+Your task is to create userlinks for the url, you will be given a username and must return a valid link.
+
+generate_link('matt c')
+http://www.codewars.com/users/matt%20c
+*/
+
+function generateLink(user) {
+  let baseURL = "http://www.codewars.com/users/";
+  return `${baseURL}${encodeURIComponent(user)}`;
+}
+
+console.log(generateLink("matt c"));
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                 Question 35: Dollars and Cents                                 */
+/* ---------------------------------------------------------------------------------------------- */
+/*
+The company you work for has just been awarded a contract to build a payment gateway. In order to help 
+move things along, you have volunteered to create a function that will take a float and return the amount 
+formatting in dollars and cents.
+
+39.99 becomes $39.99
+
+The rest of your team will make sure that the argument is sanitized before being passed to your function 
+although you will need to account for adding trailing zeros if they are missing (though you won't have to
+worry about a dangling period).
+
+3 needs to become $3.00
+3.1 needs to become $3.10
+*/
+
+function formatMoney(amount) {
+  return `$${Number(amount).toFixed(2)}`;
+}
+
+console.log(formatMoney("3.1"));
+
+// ! ---------------------------------------------------------------------------------------------- */
+// !                   Question 36: Remove all exclamation marks from end of words                  */
+// ! ---------------------------------------------------------------------------------------------- */
+
+/*
+Remove all exclamation marks from the end of words. Words are separated by a single space. There are 
+no exclamation marks within a word.
+
+remove("Hi!") === "Hi"
+remove("Hi!!!") === "Hi"
+remove("!Hi") === "!Hi"
+remove("!Hi!") === "!Hi"
+remove("Hi! Hi!") === "Hi Hi"
+remove("!!!Hi !!hi!!! !hi") === "!!!Hi !!hi !hi"
+*/
+
+function removeQ2(string) {
+  return string
+    .split(" ")
+    .map((v) => v.replace(/!+$/gi, ""))
+    .join(" ");
+}
+
+// console.log(removeQ2("hi!"));
+console.log(removeQ2("!!!Hi !!hi!!! !hi"));
