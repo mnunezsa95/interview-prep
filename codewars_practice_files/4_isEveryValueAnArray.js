@@ -5,7 +5,8 @@
 /*
 Difficulty: 7 Kyu
 
-This should only test the second array dimension of the array. The values of the nested arrays don't have to be arrays.
+Description: This should only test the second array dimension of the array. The values of the nested arrays don't 
+have to be arrays.
 
 Examples:
 
