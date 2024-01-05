@@ -98,6 +98,26 @@ var words = [
   ],
 ];
 
-function haikuWizard(arr) {}
+function haikuWizard(arr) {
+  return arr // grab the array input & map each item in the array
+    .map((a) => {
+      // a second map to grab each value of the sub-array
+      return a
+        .map((val) => {
+          console.log(val / 10 - 1); // create first index of words sub-array
+          console.log(val % 10); // creates second index of words sub-array
+          return words[parseInt(val / 10) - 1][val % 10]; // returns the word of the two arrays
+        })
+        .join(" "); // joins each word with empty space
+    })
+    .join(`\n`); // joins each larger array in a new line
+}
 
 console.log(haikuWizard([[11, 30, 17], [51, 21], [52]]));
+console.log(
+  haikuWizard([
+    [10, 11, 23, 16],
+    [50, 12, 14],
+    [15, 40],
+  ])
+);
