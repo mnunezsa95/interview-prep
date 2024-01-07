@@ -2,7 +2,8 @@
 /*                                          Haiku Wizard                                          */
 /* ---------------------------------------------------------------------------------------------- */
 
-/*
+/* 
+Difficulty: 7 Kyu
 Doesn't everyone love a haiku?
 
 If you don't know what that is, let me make your day :D

@@ -2,7 +2,8 @@
 /*                                 Count the divisors of a number                                 */
 /* ---------------------------------------------------------------------------------------------- */
 
-/* Count the number of divisors of a positive integer n.
+/* 
+Difficulty: 7 Kyu
 
 Random tests go up to n = 500000.
 
