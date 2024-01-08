@@ -21,17 +21,15 @@ Input:  1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
 */
 
 function pipeFix(numbers) {
-  let arr = [...numbers];
   // take the array and iterate over each value
   for (let i = 1; i < numbers.length; i++) {
+    // if the current value is not equal to the previous value + 1
     if (numbers[i] !== numbers[i - 1] + 1) {
-      console.log(numbers[i - 1] + 1);
-      arr.push(numbers[i - 1] + 1);
+      // insert the number at missing index
+      numbers.splice(i, 0, numbers[i - 1] + 1);
     }
   }
-  return arr.sort((a, b) => {
-    return a - b;
-  });
+  return numbers;
 }
 
 console.log(pipeFix([1, 2, 3, 5, 6, 8, 9]));
