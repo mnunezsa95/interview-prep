@@ -1,0 +1,19 @@
+/* ---------------------------------------------------------------------------------------------- */
+/*                                       Generate user links                                      */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* 
+Difficulty: 8 kyu
+
+Your task is to create userlinks for the url, you will be given a username and must return a valid link.
+
+generate_link('matt c')
+http://www.codewars.com/users/matt%20c
+*/
+
+function generateLink(user) {
+  let baseURL = "http://www.codewars.com/users/";
+  return `${baseURL}${encodeURIComponent(user)}`;
+}
+
+console.log(generateLink("matt c"));
