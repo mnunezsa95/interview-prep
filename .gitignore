@@ -1,4 +1,4 @@
-# Cruft
+# Ignore
 .DS_Store
 npm-debug.log
 .idea
