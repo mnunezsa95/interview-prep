@@ -3,7 +3,7 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
-Difficulty: 7 kyu
+Difficulty: 6 kyu
 
 Sam is an avid collector of numbers. Every time he finds a new number he throws it on the top of 
 his number-pile. Help Sam organise his collection so he can take it to the International Number Collectors 
