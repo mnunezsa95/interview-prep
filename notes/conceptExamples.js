@@ -68,31 +68,6 @@ console.log(z); // Output: [Function: y]
 z(); // Will return 7, b/c this is the result of x()
 
 //! * ---------------------------------------------------------------------------------------------- */
-//! *                                           Prototypes                                           */
-//! * ---------------------------------------------------------------------------------------------- */
-
-// using a constructor() function to create a Person Object
-function Person(name, age, height) {
-  this.name = name;
-  this.age = age;
-  this.height = height;
-}
-
-// creating a new instance of the Person object, called father
-let father = new Person("John", 45, 6);
-let mother = new Person("Ana", 45, 5);
-console.log(father.age);
-console.log(father.something); // does not exist in the prototype
-
-// creating a new method on the Person prototype
-Person.prototype.greet = function () {
-  console.log(`Hello,  ${this.name}`);
-};
-
-father.greet(); // Output: Hello, John
-mother.greet(); // Output: Hello, Ana
-
-//! * ---------------------------------------------------------------------------------------------- */
 //! *                                              HOFs                                              */
 //! * ---------------------------------------------------------------------------------------------- */
 

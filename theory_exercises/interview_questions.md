@@ -1,21 +1,24 @@
 # Table of Contents
 
-| No. | Questions                                                                                          |
-| --- | -------------------------------------------------------------------------------------------------- |
-| 1   | [What is a closure?](#1-what-is-a-closure)                                                         |
-| 2   | [What is a pure function?](#2-what-is-a-pure-function)                                             |
-| 3   | [What is Function Composition?](#3-what-is-function-composition)                                   |
-| 4   | [What is Functional Programming?](#4-what-is-functional-programming)                               |
-| 5   | [What are some compositions and their units in JavaScript?](#5-composition-paradims-javascript)    |
-| 6   | [What is a Promise?](#6-what-is-a-promise)                                                         |
-| 7   | [What is a Web Component?](#7-what-is-a-web-component)                                             |
-| 8   | [How To: Create a Click Counter in React](#8-how-to-create-a-click-counter-in-react)               |
-| 9   | [What is a React Hook?](#9-what-is-a-react-hook)                                                   |
-| 10  | [What Test Driven Development (TDD)?](#10-what-test-driven-development-tdd)                        |
-| 11  | [Why does [9,8,7,6][1,2] = 7 ?](#11-why-does-987612--7)                                            |
-| 12  | [What is the purpose of the slice() method?](#12-what-is-the-purpose-of-the-slice-method)          |
-| 13  | [What is the purpose of the splice() method?](#13-what-is-the-purpose-of-the-splice-method)        |
-| 14  | [What is the difference b/w slice() and splice()?](#14-what-is-the-difference-bw-slice-and-splice) |
+| No. | Questions                                                                                                     |
+| --- | ------------------------------------------------------------------------------------------------------------- |
+| 1   | [What is a closure?](#1-what-is-a-closure)                                                                    |
+| 2   | [What is a pure function?](#2-what-is-a-pure-function)                                                        |
+| 3   | [What is Function Composition?](#3-what-is-function-composition)                                              |
+| 4   | [What is Functional Programming?](#4-what-is-functional-programming)                                          |
+| 5   | [What are some compositions and their units in JavaScript?](#5-composition-paradims-javascript)               |
+| 6   | [What is a Promise?](#6-what-is-a-promise)                                                                    |
+| 7   | [What is a Web Component?](#7-what-is-a-web-component)                                                        |
+| 8   | [How To: Create a Click Counter in React](#8-how-to-create-a-click-counter-in-react)                          |
+| 9   | [What is a React Hook?](#9-what-is-a-react-hook)                                                              |
+| 10  | [What Test Driven Development (TDD)?](#10-what-test-driven-development-tdd)                                   |
+| 11  | [Why does [9,8,7,6][1,2] = 7 ?](#11-why-does-987612--7)                                                       |
+| 12  | [What is the purpose of the slice() method?](#12-what-is-the-purpose-of-the-slice-method)                     |
+| 13  | [What is the purpose of the splice() method?](#13-what-is-the-purpose-of-the-splice-method)                   |
+| 14  | [What is the difference b/w slice() and splice()?](#14-what-is-the-difference-bw-slice-and-splice)            |
+| 15  | [Is JavaScript a case-sensitive language](#15-is-javascript-a-case-sensitive-language)                        |
+| 16  | [What are the possible ways to create objects in JS?](#16-what-are-the-possible-ways-to-create-objects-in-js) |
+| 17  | [What is the prototype chain?](#17-what-is-the-prototype-chain)                                               |
 
 ---
 
@@ -378,6 +381,189 @@ let arrayIntegers3 = arrayIntegersOriginal3.splice(3, 1, "a", "b", "c"); //retur
 | Does not modify the original array       | Modifies the original array                  |
 | Returns the subset of the original array | Returns the removed element of the array     |
 | Used to pick the elements from an array  | Used to insert/delete elements to/from array |
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 15. Is JavaScript a case-sensitive language?
+
+- Yes, JavaScript is a case sensitive language. The language keywords, variables, function & object names, and any other identifiers must always be typed with a consistent capitalization of letters.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 16. What are the possible ways to create objects in JS?
+
+- There are many ways to create objects in javascript as mentioned below:
+
+1.  Object Literal Syntax
+    - The object literal syntax, is a comma-separated set of key-value pairs wrapped in curly braces.
+
+```JS
+var object = {
+  name: "Sudheer",
+  age: 34
+};
+
+// Object properties can be of any data type (including array or fn)
+
+```
+
+2. Object constructor
+   - The simpliest way to create an empty ovject is using the `Object()` constructor function
+   - The Object() is a built-in constructor so 'new' keyword is not required (both lines below work)
+
+```JS
+var object = new Object()
+```
+
+```Js
+var object = Object();
+```
+
+3. Object's create method:
+   - The create method of the Object is used to create a new object, by passing the specificied prototype object and properties as arguments, i.e., this pattern is helpful to create new objects based on existing objects.
+   - The second argument is optional and is used to create properties of a newly created object
+
+```JS
+var object = Object.create(null);
+```
+
+4. Function constructor
+   - In this approach, a function is created and applys the new operator to create object instances
+
+```JS
+function Person(name){
+  this.name = name;
+  this.age = 21;
+}
+
+var object = new Person("Sudhee");
+```
+
+5. Using the Prototype
+   - This is similar to function constructor but uses its prototype for their properties and methods
+
+```js
+function Person() {}
+Person.prototype.name = "Sudheer";
+var object = new Person();
+```
+
+6. ES6 Classes
+   - Using classes to create objects (OOP)
+
+```JS
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+var object = new Person("Sudheer");
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 17. What is the Prototype Chain?
+
+- Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.
+
+- The prototype on object instance is available through `Object.getPrototypeOf(object)` or **proto** property whereas prototype on constructors function is available through Object.prototype.
+
+![Screenshot](images/prototype_chain.png)
+
+```JS
+// Using a constructor() fn to create a Person object
+function Person(name, age, height) {
+  this.name = name;
+  this.age = age;
+  this.height = height;
+}
+
+// Creating two instances of the Person object called father & mother
+let father = new Person("John", 45, 6);
+let mother = new Person("Ana", 45, 5);
+console.log(father.age);
+console.log(father.something); // Does not exist in the prototype
+
+// Creating a new method on the Person prototype (any instances of person will have this fn)
+Person.prototype.greet = function () {
+  console.log(`Hello,  ${this.name}`);
+};
+
+father.greet(); // Output: Hello, John
+mother.greet(); // Output: Hello, Ana
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 18. What is the difference between Call, Apply and Bind?
+
+- **call():** The `call()` method invokes a function with a given `this` value and arguments provided one by one
+
+```JS
+// Two objects
+var employee1 = { firstName: "John", lastName: "Rodson" };
+var employee2 = { firstName: "Jimmy", lastName: "Baily" };
+
+// A function
+function invite(greeting1, greeting2) {
+  console.log(greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2);
+}
+
+// Calling invite on the two different objects, passing args one by one
+invite.call(employee1, "Hello", "How are you?"); // Hello John Rodson, How are you?
+invite.call(employee2, "Hello", "How are you?"); // Hello Jimmy Baily, How are you?
+```
+
+- **apply():** Invokes the function with a given `this` value and allows you to pass in arguments as an array
+
+```JS
+// Two objects
+var employee1 = { firstName: "John", lastName: "Rodson" };
+var employee2 = { firstName: "Jimmy", lastName: "Baily" };
+
+// A function
+function invite(greeting1, greeting2) {
+  console.log(greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2);
+}
+
+// Calling invite on the two different objects, passing in args as an array
+invite.apply(employee1, ["Hello", "How are you?"]); // Hello John Rodson, How are you?
+invite.apply(employee2, ["Hello", "How are you?"]); // Hello Jimmy Baily, How are you?
+```
+
+- **bind():** Returns a new function, allowing you to pass any number of args
+
+```JS
+// Two objects
+var employee1 = { firstName: "John", lastName: "Rodson" };
+var employee2 = { firstName: "Jimmy", lastName: "Baily" };
+
+// A function
+function invite(greeting1, greeting2) {
+  console.log(greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2);
+}
+
+// Binding a new function onto the two different objects
+var inviteEmployee1 = invite.bind(employee1);
+var inviteEmployee2 = invite.bind(employee2);
+
+// Calling the new function one by one
+inviteEmployee1("Hello", "How are you?"); // Hello John Rodson, How are you?
+inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
+```
+
+- `call()` and `apply()` are pretty much interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating `call()` is for comma (separated list) and `apply()` is for Array.
+
+- `bind()` creates a new function that will have `this` set to the first parameter passed to `bind()`.
 
 **[⬆ Back to Top](#table-of-contents)**
 
