@@ -1,24 +1,30 @@
 # Table of Contents
 
-| No. | Questions                                                                                                     |
-| --- | ------------------------------------------------------------------------------------------------------------- |
-| 1   | [What is a closure?](#1-what-is-a-closure)                                                                    |
-| 2   | [What is a pure function?](#2-what-is-a-pure-function)                                                        |
-| 3   | [What is Function Composition?](#3-what-is-function-composition)                                              |
-| 4   | [What is Functional Programming?](#4-what-is-functional-programming)                                          |
-| 5   | [What are some compositions and their units in JavaScript?](#5-composition-paradims-javascript)               |
-| 6   | [What is a Promise?](#6-what-is-a-promise)                                                                    |
-| 7   | [What is a Web Component?](#7-what-is-a-web-component)                                                        |
-| 8   | [How To: Create a Click Counter in React](#8-how-to-create-a-click-counter-in-react)                          |
-| 9   | [What is a React Hook?](#9-what-is-a-react-hook)                                                              |
-| 10  | [What Test Driven Development (TDD)?](#10-what-test-driven-development-tdd)                                   |
-| 11  | [Why does [9,8,7,6][1,2] = 7 ?](#11-why-does-987612--7)                                                       |
-| 12  | [What is the purpose of the slice() method?](#12-what-is-the-purpose-of-the-slice-method)                     |
-| 13  | [What is the purpose of the splice() method?](#13-what-is-the-purpose-of-the-splice-method)                   |
-| 14  | [What is the difference b/w slice() and splice()?](#14-what-is-the-difference-bw-slice-and-splice)            |
-| 15  | [Is JavaScript a case-sensitive language](#15-is-javascript-a-case-sensitive-language)                        |
-| 16  | [What are the possible ways to create objects in JS?](#16-what-are-the-possible-ways-to-create-objects-in-js) |
-| 17  | [What is the prototype chain?](#17-what-is-the-prototype-chain)                                               |
+| No. | Questions                                                                                                      |
+| --- | -------------------------------------------------------------------------------------------------------------- |
+| 1   | [What is a closure?](#1-what-is-a-closure)                                                                     |
+| 2   | [What is a pure function?](#2-what-is-a-pure-function)                                                         |
+| 3   | [What is Function Composition?](#3-what-is-function-composition)                                               |
+| 4   | [What is Functional Programming?](#4-what-is-functional-programming)                                           |
+| 5   | [What are some compositions and their units in JavaScript?](#5-composition-paradims-javascript)                |
+| 6   | [What is a Promise?](#6-what-is-a-promise)                                                                     |
+| 7   | [What is a Web Component?](#7-what-is-a-web-component)                                                         |
+| 8   | [How To: Create a Click Counter in React](#8-how-to-create-a-click-counter-in-react)                           |
+| 9   | [What is a React Hook?](#9-what-is-a-react-hook)                                                               |
+| 10  | [What Test Driven Development (TDD)?](#10-what-test-driven-development-tdd)                                    |
+| 11  | [Why does [9,8,7,6][1,2] = 7 ?](#11-why-does-987612--7)                                                        |
+| 12  | [What is the purpose of the slice() method?](#12-what-is-the-purpose-of-the-slice-method)                      |
+| 13  | [What is the purpose of the splice() method?](#13-what-is-the-purpose-of-the-splice-method)                    |
+| 14  | [What is the difference b/w slice() and splice()?](#14-what-is-the-difference-bw-slice-and-splice)             |
+| 15  | [Is JavaScript a case-sensitive language](#15-is-javascript-a-case-sensitive-language)                         |
+| 16  | [What are the possible ways to create objects in JS?](#16-what-are-the-possible-ways-to-create-objects-in-js)  |
+| 17  | [What is the prototype chain?](#17-what-is-the-prototype-chain)                                                |
+| 18  | [What is the difference between Call, Apply and Bind?](#18-what-is-the-difference-between-call-apply-and-bind) |
+| 19  | [What is JSON and its common operations?](#19-what-is-json-and-its-common-operations)                          |
+| 20  | [What is the difference between == and === operators?](#20-what-is-the-difference-between--and--operators)     |
+| 21  | [What is an arrow function?](#21-what-is-an-arrow-function)                                                    |
+| 22  | [What is a first class function?](#22-what-is-a-first-class-function)                                          |
+| 23  | [What is a first order function?](#23-what-is-a-first-order-function)                                          |
 
 ---
 
@@ -564,6 +570,107 @@ inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
 - `call()` and `apply()` are pretty much interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating `call()` is for comma (separated list) and `apply()` is for Array.
 
 - `bind()` creates a new function that will have `this` set to the first parameter passed to `bind()`.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 19. What is JSON and its common operations?
+
+- JSON is a text-based data format following JavaScript object syntax. It is useful when you want to transmit data across a network.
+- It is basically just a text file with an extension of .json, and a MIME type of application/json
+
+**Parsing**: Converting a string to a native object
+
+```JavaScript
+JSON.parse(text)
+```
+
+**Stringification**: Converting a native object to a string to be transmitted
+
+```JavaScript
+JSON.stringify(object)
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 20. What is the difference between == and === operators?
+
+- JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison.
+
+  - The strict operators take type of variable in consideration,
+  - Non-strict operators make type correction/conversion based upon values of variables.
+
+- Rules for strict comparisons
+  1. Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions
+  2. Two numbers are strictly equal when they are numerically equal (same value)
+     - `NaN` is not equal to anything (including `NaN`)
+     - Positive and negative numbers are equal to one another
+  3. Two boolean operands are equal if they are both `true` or both `false`
+  4. Two objects are strictly equal if they refer to the same Object
+  5. `null` and `undefined` are not equal with `===`, but equal with `==`
+     - Example1: `null === undefined` is `false`
+     - Example2: `null === undefined` is `true`
+
+```JavaScript
+0 == false   // true
+0 === false  // false
+1 == "1"     // true
+1 === "1"    // false
+null == undefined // true
+null === undefined // false
+'0' == false // true
+'0' === false // false
+[]==[] or []===[] //false, refer different objects in memory
+{}=={} or {}==={} //false, refer different objects in memory
+
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 21. What is an arrow function?
+
+- An arrow function is a shorter syntax for a function expression and does not have its own `this`, `arguments`, `super` or `new.target`.
+  - These functions are best suited for non-method functions
+  - These functions cannot be used as constructors
+
+```JavaScript
+const newFunction = (item) => {
+  console.log(item)
+}
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 22. What is a first class function?
+
+- In Javascript, functions are first class objects.
+- First-class functions means when functions in that language are treated like any other variable.
+
+- This means a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
+
+```JavaScript
+const handler = () => console.log("This is a click handler function");
+document.addEventListener("click", handler)
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+---
+
+### 23. What is a first order function?
+
+- A first-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
+
+```JavaScript
+const firstOrder = () => console.log("I am a first order function!");
+```
 
 **[⬆ Back to Top](#table-of-contents)**
 

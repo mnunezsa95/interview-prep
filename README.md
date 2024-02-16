@@ -24,13 +24,7 @@
 
 | No. | Questions                                                                                                                                                     |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 3   | [What is the difference between Call, Apply and Bind](#what-is-the-difference-between-call-apply-and-bind)                                                    |
-| 4   | [What is JSON and its common operations](#what-is-json-and-its-common-operations)                                                                             |
 | 8   | [How do you compare an Object with a Map](#how-do-you-compare-object-and-map)                                                                                 |
-| 9   | [What is the difference between == and === operators](#what-is-the-difference-between--and--operators)                                                        |
-| 10  | [What are lambda or arrow functions](#what-are-lambda-or-arrow-functions)                                                                                     |
-| 11  | [What is a first class function](#what-is-a-first-class-function)                                                                                             |
-| 12  | [What is a first order function](#what-is-a-first-order-function)                                                                                             |
 | 13  | [What is a higher order function](#what-is-a-higher-order-function)                                                                                           |
 | 14  | [What is a unary function](#what-is-a-unary-function)                                                                                                         |
 | 15  | [What is the currying function](#what-is-the-currying-function)                                                                                               |
@@ -472,23 +466,6 @@
 
 
 
-4. ### What is JSON and its common operations
-
-   **JSON** is a text-based data format following JavaScript object syntax, which was popularized by `Douglas Crockford`. It is useful when you want to transmit data across a network. It is basically just a text file with an extension of .json, and a MIME type of application/json
-
-   **Parsing:** Converting a string to a native object
-
-   ```javascript
-   JSON.parse(text);
-   ```
-
-   **Stringification:** Converting a native object to a string so that it can be transmitted across the network
-
-   ```javascript
-   JSON.stringify(object);
-   ```
-
-   **[⬆ Back to Top](#table-of-contents)**
 
 5. ### How do you compare Object and Map
 
@@ -503,65 +480,7 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
-6. ### What is the difference between == and === operators
 
-   JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. The strict operators take type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables. The strict operators follow the below conditions for different types,
-
-   1. Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
-   2. Two numbers are strictly equal when they are numerically equal, i.e., having the same number value.
-      There are two special cases in this,
-      1. NaN is not equal to anything, including NaN.
-      2. Positive and negative zeros are equal to one another.
-   3. Two Boolean operands are strictly equal if both are true or both are false.
-   4. Two objects are strictly equal if they refer to the same Object.
-   5. Null and Undefined types are not equal with ===, but equal with ==, i.e,
-      null===undefined --> false, but null==undefined --> true
-
-   Some of the example which covers the above cases:
-
-   ```javascript
-   0 == false   // true
-   0 === false  // false
-   1 == "1"     // true
-   1 === "1"    // false
-   null == undefined // true
-   null === undefined // false
-   '0' == false // true
-   '0' === false // false
-   []==[] or []===[] //false, refer different objects in memory
-   {}=={} or {}==={} //false, refer different objects in memory
-   ```
-
-   **[⬆ Back to Top](#table-of-contents)**
-
-7. ### What are lambda or arrow functions
-
-   An arrow function is a shorter syntax for a function expression and does not have its own **this, arguments, super, or new.target**. These functions are best suited for non-method functions, and they cannot be used as constructors.
-
-   **[⬆ Back to Top](#table-of-contents)**
-
-8. ### What is a first class function
-
-   In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
-
-   For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
-
-   ```javascript
-   const handler = () => console.log("This is a click handler function");
-   document.addEventListener("click", handler);
-   ```
-
-   **[⬆ Back to Top](#table-of-contents)**
-
-9. ### What is a first order function
-
-   A first-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
-
-   ```javascript
-   const firstOrder = () => console.log("I am a first order function!");
-   ```
-
-   **[⬆ Back to Top](#table-of-contents)**
 
 10. ### What is a higher order function
 
