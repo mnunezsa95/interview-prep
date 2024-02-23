@@ -1,155 +1,124 @@
-//! * ---------------------------------------------------------------------------------------------- */
-//! *                                       let, var and const                                       */
-//! * ---------------------------------------------------------------------------------------------- */
+//! /* ---------------------------------------------------------------------------------------------- */
+//! /*                Function Expressions vs Function Declarations vs Arrow Functions                */
+//! /* ---------------------------------------------------------------------------------------------- */
 
-var a = 3;
-var a = 4;
-console.log(a); // Output: 4 b/c variables can be reassigned when using var
-
-let b = 3;
-b = 4;
-console.log(b); // Output: 4 b/c variables can be reassigned
-// let cannot be re-declared (meaning we cannot use let b = 4 again)
-
-const d = 3;
-console.log(d); // Output: 3; if we tried to resassign it would produce an error
-
-//! * ---------------------------------------------------------------------------------------------- */
-//! *                                         Types of Scope                                         */
-//! * ---------------------------------------------------------------------------------------------- */
-
-var a = 5; // this variable globally-scoped scope
-function adder() {
-  let b = 7; // this variable is function-scoped; cannot be accessed outside this function
-  console.log(a + b);
+/* ------------------------------------ Function Declarations ----------------------------------- */
+function addNumbers(a, b) {
+  return a + b;
 }
+console.log(addNumbers(2, 2));
 
-adder();
+/* ------------------------------------ Function Expressions ------------------------------------ */
+const addNumbers2 = function (a, b) {
+  return a + b;
+};
+console.log(addNumbers2(2, 2));
 
-{
-  const c = 10; // this variable is block-scoped; cannot be accessed outside this block
-  console.log(c);
-}
+/* --------------------------------------- Arrow Functions -------------------------------------- */
+const addNumbers3 = (a, b) => {
+  return a + b;
+};
+console.log(addNumbers3(2, 2));
 
-//! * ---------------------------------------------------------------------------------------------- */
-//! *                                            Closures                                            */
-//! * ---------------------------------------------------------------------------------------------- */
+//! /* ---------------------------------------------------------------------------------------------- */
+//! /*                            5 Ways to Create an Object in JavaScript                            */
+//! /* ---------------------------------------------------------------------------------------------- */
 
-/* 
-What are closures? Functions that have access to variables from an outer function after the function has 
-finished executing. Closure functions remember the environment in which they were created 
-*/
-
-// * Example 1:
-// there is an outer function called "outerFunction"
-function outerFunction(outerVariable) {
-  // the outerFunction returns a new function called "innerFunction"
-  return function innerFunction(innerVariable) {
-    console.log("Outer Variable: " + outerVariable); // outerVariable can be accessed because innerFunction remembers it
-    console.log("Inner Variable: " + innerVariable);
-  };
-}
-
-const newFunction = outerFunction("Outside");
-newFunction("inside");
-console.log(newFunction);
-
-// * Example 2:
-function x() {
-  var a = 7;
-  function y() {
-    console.log(a);
-  }
-  return y;
-}
-
-let z = x();
-console.log(z); // Output: [Function: y]
-z(); // Will return 7, b/c this is the result of x()
-
-//! * ---------------------------------------------------------------------------------------------- */
-//! *                                              HOFs                                              */
-//! * ---------------------------------------------------------------------------------------------- */
-
-//* Example 1
-// A simple multiplication function
-function multiplyByTwo(num) {
-  return num * 2;
-}
-
-// a HOF that accepts a num input and an operation input
-function applyOperation(num, operation) {
-  return operation(num); // returns another function's result
-}
-
-let res = applyOperation(5, multiplyByTwo);
-console.log(res);
-
-//* Example 2
-const greet = () => {
-  const prefix = "Mr";
-  return (name) => {
-    console.log(`${prefix} ${name}, welcome!`);
-  };
+/* ------------------------------------- 1. Object Literals ------------------------------------- */
+/*  Obj Literals are used for creating single, standalone objects that don’t require a blueprint 
+or repeated instantiation */
+const car = {
+  make: "Toyota",
+  model: "Corolla",
+  year: 2021,
 };
 
-greet()("Jack");
+console.log(car);
 
-//! * ---------------------------------------------------------------------------------------------- */
-//! *                                       The 'this' keyword                                       */
-//! * ---------------------------------------------------------------------------------------------- */
+/* ----------------------------------- 2. new Object() Syntax ----------------------------------- */
+const person = new Object();
+person.name = "Marlon";
+person.age = 28;
+person.isEmployed = true;
+console.log(person);
 
-// An object for an airline
-const lufthansa = {
-  airline: "Lufthansa",
-  iataCode: "LH",
-  bookings: [],
-  book(flightNum, name) {
-    // the 'this' keyword points back to this object; allows the method to have context on which object called it
-    console.log(`${name} booked a set on ${this.airline} flight ${this.iataCode}${flightNum}`);
-    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+/* ---------------------------------- 3. Constructor Functions ---------------------------------- */
+// Constructor functions are used to create multiple instances of a similar object.
+function Smartphone(brand, model, year) {
+  this.brand = brand;
+  this.model = model;
+  this.year = year;
+}
+const myPhone = new Smartphone("Apple", "iPhone 14", 2023);
+console.log(myPhone);
+
+/* -------------------------------- 4. The Object.create() Method ------------------------------- */
+/* Object.create() is used to create an object that directly inherits from another without calling 
+the parent’s constructor.*/
+const animal = {
+  type: "Animal",
+  displayType: function () {
+    console.log(this.type);
   },
 };
+const dog = Object.create(animal);
+dog.type = "Dog";
+dog.displayType();
 
-lufthansa.book(239, "Marlon Nunez");
-lufthansa.book(635, "John Smith");
+/* ------------------------------------- 5. ES6 Class Syntax ------------------------------------ */
+/* ES6 Classes are used complex applications where the organization, readability, and inheritance 
+structure of your code are important*/
+class Book {
+  constructor(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+  getSummary() {
+    return `${this.title} was written by ${this.author} in ${this.year}`;
+  }
+}
+const myBook = new Book("The Catcher in the Rye", "J. D. Sallinger", 1951);
+console.log(myBook.getSummary());
 
-// * This airline to also have a book() function, but should not not copy the code
-const eurowings = {
-  airline: "Lufthansa",
-  iataCode: "LH",
-  bookings: [],
+//! /* ---------------------------------------------------------------------------------------------- */
+//! /*                                     Deep Cloning an Object                                     */
+//! /* ---------------------------------------------------------------------------------------------- */
+/* In JavaScript, objects and arrays are reference types, which means that when you assign one variable 
+to another, you’re actually copying a reference to the original object or array, not creating a new 
+independent copy. */
+
+function deepCloneObjectOrArray(obj) {
+  if (obj === null || typeof obj !== "object") {
+    return obj; // Return primitive types or null (don't need to be copied)
+  }
+  // If it's an array, clone each element
+  if (Array.isArray(obj)) {
+    return obj.map((item) => deepCloneObjectOrArray(item));
+  }
+  // If it's an object, clone each property (including nested objects and arrays)
+  const clonedObj = {};
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clonedObj[key] = deepCloneObjectOrArray(obj[key]);
+    }
+  }
+  return clonedObj;
+}
+
+const originalObject = {
+  name: "Spider",
+  age: 25,
+  hobbies: ["swinging", "walking"],
+  address: {
+    city: "Brooklyn",
+    state: "New York",
+  },
 };
+const originalArray = [1, 2, 3, 4, 5];
 
-const swiss = {
-  airline: "Swiss Airlines",
-  iataCode: "LX",
-  bookings: [],
-};
+const clonedObject = deepCloneObjectOrArray(originalObject);
+const clonedArray = deepCloneObjectOrArray(originalArray);
 
-const emirate = {
-  airline: "Emirate Airlines",
-  iataCode: "EM",
-  bookings: [],
-};
-
-// * Making a copy
-const book = lufthansa.book;
-
-// * Using the call() and apply() methods
-
-book.call(eurowings, 400, "Sarah Williams");
-console.log(eurowings);
-
-book.call(lufthansa, 23, "Mary Cooper");
-console.log(lufthansa);
-
-// apply() takes in an array as second argument
-let flightData = [583, "George Cooper"];
-book.apply(swiss, flightData);
-console.log(swiss);
-
-// * Using the bind() method
-bookEM = book.bind(emirate, 100);
-bookEM("Marlon Nunez");
-console.log(emirate);
+console.log(clonedObject === originalObject);
+console.log(clonedArray === originalArray);
