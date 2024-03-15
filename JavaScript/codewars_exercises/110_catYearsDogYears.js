@@ -3,6 +3,8 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
+Difficulty: 7 kyu
+
 I have a cat and a dog which I got as kitten / puppy.
 I forget when that was, but I do know their current ages as catYears and dogYears.
 Find how long I have owned each of my pets and return as a list [ownedCat, ownedDog]

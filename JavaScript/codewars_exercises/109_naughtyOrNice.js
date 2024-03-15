@@ -3,6 +3,8 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
+Difficulty: 7 kyu
+
 Santa is coming to town and he needs your help finding out who's been naughty or nice. You will 
 be given an entire year of JSON data following this format:
 

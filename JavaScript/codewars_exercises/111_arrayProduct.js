@@ -3,6 +3,8 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
+Difficulty: 6 kyu
+
 Given an array of numbers, your task is to return a new array where each index (new_array[i]) is 
 equal to the product of the original array, except for the number at that index (array[i]).
 
