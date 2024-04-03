@@ -2,7 +2,7 @@
 /*                                          Encrypt This!                                         */
 /* ---------------------------------------------------------------------------------------------- */
 /*
-Difficulty: 7 kyu
+Difficulty: 6 kyu
 
 You want to create secret messages which can be deciphered by the Decipher this! kata. 
 
