@@ -5,7 +5,6 @@
 /*
 Difficulty: 6 kyu
 
-
 Generate an array of unique strings.
 
 There are three conditions:
