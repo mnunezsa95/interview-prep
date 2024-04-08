@@ -71,6 +71,11 @@ class LinkedList {
     return temp; // Return the number that was popped off
   }
 
+  /* 
+  unshift() is O(1) operation
+  Edge Cases:
+  - 1) linked list is empty
+  */
   unshift(value) {
     const newNode = new Node(value);
     if (!this.head) {
@@ -82,6 +87,22 @@ class LinkedList {
     }
     this.length++;
     return this;
+  }
+
+  /* 
+  shift() is O(1) operation
+  Edge Cases:
+  - 1) if linked list has 1 item
+  - 2) if linked list has no items
+  */
+  shift() {
+    if (!this.head) return undefined;
+    let temp = this.head;
+    this.head = this.head.next;
+    temp.next = null;
+    this.length--;
+    if (this.length === 0) this.tail = null;
+    return temp;
   }
 }
 
