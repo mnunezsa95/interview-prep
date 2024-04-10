@@ -36,14 +36,16 @@ Example
 */
 
 function parkingCost(timeIn, timeOut) {
+  // Map out the values
   const [hourIn, minuteIn] = timeIn.split(":").map(Number);
   const [hourOut, minuteOut] = timeOut.split(":").map(Number);
 
+  //
   let totalMinutes;
   if (hourOut < hourIn || (hourOut === hourIn && minuteOut < minuteIn)) {
     totalMinutes = 24 * 60 - (hourIn * 60 + minuteIn) + (hourOut * 60 + minuteOut);
   } else {
-    totalMinutes = hourOut * 60 + minuteOut - (hourIn * 60 + minuteIn);
+    totalMinutes = hourOut * 60 + minuteOut - (hourIn * 60 + minuteIn); // calculate totalMinutes
   }
 
   let parkingFee = 0;
