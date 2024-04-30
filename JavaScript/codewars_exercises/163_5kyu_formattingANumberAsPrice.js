@@ -3,6 +3,8 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
+Difficulty: 5 kyu
+
 Your objective is to add formatting to a plain number to display it as price.
 
 The function should return a string like this:
