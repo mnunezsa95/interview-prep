@@ -3,9 +3,9 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
-The museum of incredibly dull things wants to get rid of some exhibits. Miriam, the interior architect,
-comes up with a plan to remove the most boring exhibits. She gives them a rating, and then removes 
-the one with the lowest rating.
+Difficult: 7 kyu
+
+The museum of incredibly dull things wants to get rid of some exhibits. Miriam, the interior architect, comes up with a plan to remove the most boring exhibits. She gives them a rating, and then removes the one with the lowest rating.
 
 However, just as she finished rating all exhibits, she's off to an important fair, so she asks you 
 to write a program that tells her the ratings of the exhibits after removing the lowest one. Fair 
