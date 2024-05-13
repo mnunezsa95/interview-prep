@@ -3,6 +3,8 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
+Difficulty: 8 kyu
+
 For this challenge you need to create a simple MIN / MAX statement that will return the Minimum 
 and Maximum ages out of all the people.
 
