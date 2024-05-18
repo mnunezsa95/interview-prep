@@ -3,7 +3,7 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
-Difficulty: 6kyu
+Difficulty: 6 kyu
 
 Mnemonics are wonderful tools to help us remember the order of things that we might otherwise have trouble remembering.
 

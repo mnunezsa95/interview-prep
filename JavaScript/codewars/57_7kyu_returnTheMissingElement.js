@@ -3,7 +3,7 @@
 /* ---------------------------------------------------------------------------------------------- */
 
 /*
-Difficulty:  kyu
+Difficulty: 7 kyu
 
 Fellow code warrior, we need your help! We seem to have lost one of our sequence elements, and we need your 
 help to retrieve it!
