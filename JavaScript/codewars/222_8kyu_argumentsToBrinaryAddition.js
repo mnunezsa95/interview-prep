@@ -19,9 +19,12 @@ This is a modification on the Kata: Array2Binary addition hope you like it
 */
 
 function arr2bin(arr) {
-  const sum = arr.reduce((acc, val) => {
-    return acc + (typeof val === "number" && !isNaN(val) ? val : 0);
-  }, 0);
-
+  let sum = 0;
+  for (let val of arr) {
+    if (typeof val === "number") {
+      if (isNaN(val)) return "NaN"; // Return 'NaN' if any value is NaN
+      sum += val;
+    }
+  }
   return sum.toString(2);
 }
