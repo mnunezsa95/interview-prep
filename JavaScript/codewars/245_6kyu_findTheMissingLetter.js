@@ -17,6 +17,8 @@ Example:
 (Use the English alphabet with 26 letters!)
 */
 
+/* ----------------------------------------- SOLUTION 1 ----------------------------------------- */
+
 function findMissingLetter(array) {
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
   if (array[0] === array[0].toUpperCase()) {
@@ -39,3 +41,18 @@ function findMissingLetter(array) {
 
 console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
 console.log(findMissingLetter(["O", "Q", "R", "S"]));
+
+/* ----------------------------------------- SOLUTION 2 ----------------------------------------- */
+
+function findMissingLetter2(array) {
+  let firstChar = array[0].charCodeAt(0);
+  for (let i = 0; 1 < array.length; i++) {
+    let currentValue = firstChar + i;
+    if (currentValue !== array[i].charCodeAt(0)) {
+      return String.fromCharCode(currentValue);
+    }
+  }
+}
+
+console.log(findMissingLetter2(["a", "b", "c", "d", "f"]));
+console.log(findMissingLetter2(["O", "Q", "R", "S"]));
