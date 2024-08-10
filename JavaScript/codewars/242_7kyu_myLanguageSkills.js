@@ -18,11 +18,16 @@ Note: the scores will always be unique (so no duplicate values)
 /* ----------------------------------------- SOLUTION 1 ----------------------------------------- */
 
 function myLanguages(results) {
+  // Save the entries from the dict in an array of arrays
   const entries = Object.entries(results);
 
-  const filteredAndSortedEntries = entries.filter(([key, value]) => value >= 60).sort(([, valueA], [, valueB]) => valueB - valueA);
-
-  return filteredAndSortedEntries.map(([key, value]) => key);
+  // Filter through each sub-array, and filter out values larger than 60
+  // Sort the results by descending order
+  // Output the keys into an array
+  return entries
+    .filter(([key, value]) => value >= 60)
+    .sort(([, valueA], [, valueB]) => valueB - valueA)
+    .map(([key, value]) => key);
 }
 
 console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));

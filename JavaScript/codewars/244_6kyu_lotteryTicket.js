@@ -22,10 +22,15 @@ All inputs will be in the correct format. Strings on tickets are not always the 
 /* ----------------------------------------- SOLUTION 1 ----------------------------------------- */
 
 function bingo(ticket, win) {
+  // Variable to hold result
   let count = 0;
 
+  // Iterate through each sub-array in ticket array
   ticket.forEach(([str, num]) => {
+    // Split the string in each sub-array, and determine if atleast some of the strings' ASCII matche the number
     let = isMatch = str.split("").some((char) => char.charCodeAt() === num);
+
+    // If yes, increment count
     if (isMatch) {
       count++;
     }

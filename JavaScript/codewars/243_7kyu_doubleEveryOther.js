@@ -11,8 +11,6 @@ Example:
 - For input array/list : [1,2,3,4] the function should return : [1,4,3,8]
 */
 
-function doubleEveryOther(a) {
-  return a.map((val, i) => (i % 2 !== 0 ? val * 2 : val));
-}
+const doubleEveryOther = (a) => a.map((val, i) => (i % 2 !== 0 ? val * 2 : val));
 
 console.log(doubleEveryOther([1, 2, 3, 4]));
