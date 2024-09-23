@@ -1,1 +1,0 @@
-https://github.com/Floriane-MAFFEI/Codewars-Katas-Resolution/tree/master/8Kyu/Collect-Tuition-(SQL-for-beginners-%234)/SQL
